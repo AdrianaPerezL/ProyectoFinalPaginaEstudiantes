@@ -1,3 +1,5 @@
+import '../../assets/styles/materias.css'
+
 import React from 'react'
 
 export  function Materias() {
