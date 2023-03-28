@@ -51,7 +51,9 @@
     transition: transform 0.2s, background 0.2s;
   }
   
-  img {
+  
+  
+  .imgMateria {
     position: absolute;
     left: 58%;
     top: 25%;
