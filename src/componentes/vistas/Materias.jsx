@@ -5,7 +5,7 @@ import React from 'react'
 export  function Materias() {
   return (
     <>
-    <div class="container-fluid mt-5">
+    <div class="container-fluid mt-lg-5">
             <div class="row">
                 <h1 class="materiasTitulo">Materias</h1>
 
