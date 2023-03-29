@@ -140,7 +140,9 @@ export const Index = () => {
           </div>
         </section>
         {/* COUNTER */}
-        <section id="counter" className="section-padding" style={{backgroundImage: `url(${fondo})`}}>
+        <section id="counter" className="section-padding" style={{ 
+      backgroundImage: `url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg")` 
+    }}>
           <div className="container text-center">
             <div className="row g-4">
               <div className="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay={150}>
