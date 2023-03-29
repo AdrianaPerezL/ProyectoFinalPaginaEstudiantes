@@ -171,22 +171,22 @@ export const Index = () => {
                 </div>
                 <div className="slider">
                   <div className="slide-track">
-                    <div className="slide"><img src="assets/images/brands/Mined.png" /></div>
+                    <div className="slide"><img src={mined} /></div>
                   </div>
                   <div className="slide-track">
-                    <div className="slide"><img src="assets/images/brands/Recurso 3.png" /></div>
+                    <div className="slide"><img src={recurso3} /></div>
                   </div>
                   <div className="slide-track">
-                    <div className="slide"><img src="assets/images/brands/Recurso 2.png" /></div>
+                    <div className="slide"><img src={recurso2} /></div>
                   </div>
                   <div className="slide-track">
-                    <div className="slide"><img src="assets/images/brands/Mined.png" /></div>
+                    <div className="slide"><img src={mined} /></div>
                   </div>
                   <div className="slide-track">
-                    <div className="slide"><img src="assets/images/brands/Recurso 3.png" /></div>
+                    <div className="slide"><img src={recurso3} /></div>
                   </div>
                   <div className="slide-track">
-                    <div className="slide"><img src="assets/images/brands/Recurso 2.png" /></div>
+                    <div className="slide"><img src={recurso2} /></div>
                   </div>
                 </div>
               </div></div></div></section>

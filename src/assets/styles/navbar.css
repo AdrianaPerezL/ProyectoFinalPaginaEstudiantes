@@ -291,7 +291,7 @@ align-items: center;
 
 /* COUNTER */
 #counter {
-    background: linear-gradient(rgba(var(--c-brand-rgb), 0.8), rgba(var(--c-brand-rgb), 0.8));
+    background: linear-gradient(rgba(var(--c-brand-rgb), 0.8), rgba(var(--c-brand-rgb), 0.8)), url();
     background-position: center;
     background-size: cover;
 }
