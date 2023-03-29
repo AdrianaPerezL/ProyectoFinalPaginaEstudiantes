@@ -6,13 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Materias } from './componentes/vistas/Materias';
 import { Navbar } from './componentes/vistas/Navbar';
+import { Ruta } from './componentes/rutas/Ruta';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar />
-    <Materias/>
+    <Ruta/>
   </React.StrictMode>
 );
 
