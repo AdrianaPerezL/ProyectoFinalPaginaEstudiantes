@@ -1,14 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../assets/styles/navbar.css'
 import Logo from '../../assets/img/Recurso1.png'
 import {Link} from 'react-router-dom'
 
 export const Navbar = () => {
-    
-    const imgStyle = { width: '80px'}
+ 
+  
+  const [scrollTop, setScrollTop] = useState(0);
+  
+  const [ClassNamescrollTop, setClassNameScrollTop] = useState("navbar-scrolled");
+  const [StatusClassName, setStatusClassName] = useState("navbar-scrolled");
+
+
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      setScrollTop(window.scrollY);
+
+      if (window.scrollY >= 60) {
+
+        setClassNameScrollTop("navbar-scrolled");
+        setStatusClassName(true);
+
+      } else if (window.scrollY <= 60) {
+
+        setClassNameScrollTop(" ")
+        setStatusClassName(false);
+
+      };
+
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  console.log(scrollTop, "ClassNamescrollTop", ClassNamescrollTop)
+
+ 
 
   return (
-     <nav className="navbar navbar-expand-lg fixed-top">
+     <nav className={ StatusClassName ? `navbar navbar-expand-lg fixed-top ${ClassNamescrollTop}` : `navbar navbar-expand-lg fixed-top` }>
         <div className="container">
           <a className="navbar-brand" href="#">
             <img className="brandImg rounded mx-auto d-block " src={Logo} />
