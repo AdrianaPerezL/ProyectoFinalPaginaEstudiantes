@@ -19,7 +19,6 @@ export const Cuestionario = () => {
       pregunta3: "",
       pregunta4: "",
       pregunta5: "",
-      pregunta6: "",
     });
   
   
@@ -62,26 +61,34 @@ export const Cuestionario = () => {
           <div className="col-4" id="list">
             <div className="list-group" id="list-tab" role="tablist">
 
-            <form onSubmit={enviarRespuesta} className="mt-8 p-4">
+  <form onSubmit={enviarRespuesta}>
+    {mostrar.mostrar === true && mostrar.ID === 1 && (
+      <section>
 
-{mostrar.mostrar === true && mostrar.ID === 1 && (
-  <div>
-    <h1 className="list-group-item" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Primer Pregunta</h1>
-    <div class="form-check">
+      <div id='divgrande'>
+        <h1 className="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Primer Pregunta</h1>
+      </div>
+
+  
+      <div class="form-check" id='divpequeño'>
+      <p>
+        1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci soluta fugiat enim maxime aspernatur? Quibusdam, tempora vel praesentium iusto expedita doloremque dicta maiores possimus adipisci rem reiciendis aut delectus voluptatum!
+      </p>
       <input
-      value="1" 
+      value="1"
         onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta1"
         id="flexRadioDefault1"
       />
-      <label class="form-check-label" for="flexRadioDefault1" >
-        Verdadero
+      <label class="form-check-label" for="flexRadioDefault1" id='label' >
+      Lorem
       </label>
     </div>
 
-    <div class="form-check">
+
+    <div class="form-check" id='divpequeño2'>
       <input
         value="2"
         onChange={ObtenerValores}
@@ -90,153 +97,247 @@ export const Cuestionario = () => {
         name="pregunta1"
         id="flexRadioDefault1"
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-      Falso
+      <label class="form-check-label" for="flexRadioDefault2" id='label'>
+      Lorem
       </label>
     </div>
-  </div>
-)}
 
-{mostrar.mostrar === true && mostrar.ID === 2 && (
-  <div>
-    <h1 className="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Segunda Pregunta</h1>
-    <div class="form-check">
+    <div class="form-check" id='divpequeño2'>
+      <input
+        value="3"
+        onChange={ObtenerValores}
+        class="form-check-input"
+        type="radio"
+        name="pregunta1"
+        id="flexRadioDefault1"
+      />
+      <label class="form-check-label" for="flexRadioDefault3" id='label'>
+        Lorem
+      </label>
+    </div>
+
+    </section>)}
+
+
+  {mostrar.mostrar === true && mostrar.ID === 2 && (
+    <section>
+      <div id='divgrande'>
+        <h1 className="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Segunda Pregunta</h1>
+      </div>
+
+  
+      <div class="form-check" id='divpequeño'>
+      <p>
+        2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci soluta fugiat enim maxime aspernatur? Quibusdam, tempora vel praesentium iusto expedita doloremque dicta maiores possimus adipisci rem reiciendis aut delectus voluptatum!
+      </p>
       <input
       value="1"
-      onChange={ObtenerValores}
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta2"
         id="flexRadioDefault2"
-        
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        Verdadero
+      <label class="form-check-label" for="flexRadioDefault1" id='label' >
+      Lorem
       </label>
     </div>
 
-    <div class="form-check">
+
+    <div class="form-check" id='divpequeño2'>
       <input
-     value="2"
-     onChange={ObtenerValores}
+        value="2"
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta2"
         id="flexRadioDefault2"
-   
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        Falso
+      <label class="form-check-label" for="flexRadioDefault2" id='label'>
+      Lorem
       </label>
     </div>
-  </div>
-)}
 
-{mostrar.mostrar === true && mostrar.ID === 3 && (
-  <div>
-    <h1 className="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Tercer Pregunta</h1>
-    <div class="form-check">
+    <div class="form-check" id='divpequeño2'>
       <input
-         value="1"
-         onChange={ObtenerValores}
+        value="3"
+        onChange={ObtenerValores}
+        class="form-check-input"
+        type="radio"
+        name="pregunta2"
+        id="flexRadioDefault1"
+      />
+      <label class="form-check-label" for="flexRadioDefault3" id='label'>
+        Lorem
+      </label>
+    </div>
+    </section>
+  )}
+
+ {mostrar.mostrar === true && mostrar.ID === 3 && (
+  <section>
+    <div id='divgrande'>
+        <h1 className="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Tercera Pregunta</h1>
+      </div>
+
+  
+      <div class="form-check" id='divpequeño'>
+      <p>
+        3. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci soluta fugiat enim maxime aspernatur? Quibusdam, tempora vel praesentium iusto expedita doloremque dicta maiores possimus adipisci rem reiciendis aut delectus voluptatum!
+      </p>
+      <input
+      value="1"
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta3"
         id="flexRadioDefault3"
-       
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        True
+      <label class="form-check-label" for="flexRadioDefault3" id='label' >
+      Lorem
       </label>
     </div>
-    <div class="form-check">
+
+
+    <div class="form-check" id='divpequeño2'>
       <input
-      value="2"
-      onChange={ObtenerValores}
+        value="2"
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta3"
         id="flexRadioDefault3"
-        
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        Falso
+      <label class="form-check-label" for="flexRadioDefault3" id='label'>
+      Lorem
       </label>
     </div>
-  </div>
-)}
+
+    <div class="form-check" id='divpequeño2'>
+      <input
+        value="3"
+        onChange={ObtenerValores}
+        class="form-check-input"
+        type="radio"
+        name="pregunta3"
+        id="flexRadioDefault3"
+      />
+      <label class="form-check-label" for="flexRadioDefault3" id='label'>
+        Lorem
+      </label>
+    </div>
+  </section>
+ )}
 
 {mostrar.mostrar === true && mostrar.ID === 4 && (
-  <div>
-   
-    <h1 className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Cuarta Pregunta</h1>
-    <div class="form-check">
+  <section>
+     <div id='divgrande'>
+        <h1 className="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Cuarta Pregunta</h1>
+      </div>
+
+  
+      <div class="form-check" id='divpequeño'>
+      <p>
+        4. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci soluta fugiat enim maxime aspernatur? Quibusdam, tempora vel praesentium iusto expedita doloremque dicta maiores possimus adipisci rem reiciendis aut delectus voluptatum!
+      </p>
       <input
       value="1"
-      onChange={ObtenerValores}
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta4"
         id="flexRadioDefault4"
-      
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        Verdadero
+      <label class="form-check-label" for="flexRadioDefault4" id='label' >
+      Lorem
       </label>
     </div>
-    <div class="form-check">
+
+
+    <div class="form-check" id='divpequeño2'>
       <input
-      value="2"            
-      onChange={ObtenerValores}
+        value="2"
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta4"
         id="flexRadioDefault4"
-        
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        Falso
+      <label class="form-check-label" for="flexRadioDefault4" id='label'>
+      Lorem
       </label>
     </div>
-    
-  </div>
+
+    <div class="form-check" id='divpequeño2'>
+      <input
+        value="3"
+        onChange={ObtenerValores}
+        class="form-check-input"
+        type="radio"
+        name="pregunta4"
+        id="flexRadioDefault4"
+      />
+      <label class="form-check-label" for="flexRadioDefault4" id='label'>
+        Lorem
+      </label>
+    </div>
+  </section>
 )}
 
-{mostrar.mostrar === true && mostrar.ID === 5 && (
-  <div>
-   
-    <h1 className="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Quinta Pregunta</h1>
-    <div class="form-check">
+{mostrar.mostrar === true && mostrar.ID === 5 &&(
+  <section>
+     <div id='divgrande'>
+        <h1 className="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home"> Quinta Pregunta</h1>
+      </div>
+
+  
+      <div class="form-check" id='divpequeño'>
+      <p>
+        5. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci soluta fugiat enim maxime aspernatur? Quibusdam, tempora vel praesentium iusto expedita doloremque dicta maiores possimus adipisci rem reiciendis aut delectus voluptatum!
+      </p>
       <input
       value="1"
-      onChange={ObtenerValores}
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta5"
         id="flexRadioDefault5"
-       
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-      Verdadero
+      <label class="form-check-label" for="flexRadioDefault5" id='label' >
+      Lorem
       </label>
     </div>
-    <div class="form-check">
+
+
+    <div class="form-check" id='divpequeño2'>
       <input
-      value="2"
-      onChange={ObtenerValores}
+        value="2"
+        onChange={ObtenerValores}
         class="form-check-input"
         type="radio"
         name="pregunta5"
         id="flexRadioDefault5"
-        
       />
-      <label class="form-check-label" for="flexRadioDefault2">
-        Falso
+      <label class="form-check-label" for="flexRadioDefault2" id='label'>
+      Lorem
       </label>
     </div>
-  </div>
+
+    <div class="form-check" id='divpequeño2'>
+      <input
+        value="3"
+        onChange={ObtenerValores}
+        class="form-check-input"
+        type="radio"
+        name="pregunta5"
+        id="flexRadioDefault5"
+      />
+      <label class="form-check-label" for="flexRadioDefault5" id='label'>
+        Lorem
+      </label>
+    </div>
+  </section>
 )}
-</form>
 
 {mostrar.mostrar === false && mostrar.ID === 6 && (
   <div>
@@ -248,6 +349,7 @@ export const Cuestionario = () => {
   </div>
 )}
 
+
 {(textoPregunta === "Siguiente") &&
 <button id="boton2" style={{textDecoration: 'none', color: 'white'}}
   onClick={() => PasarLaSiguientePregunta()}
@@ -255,6 +357,11 @@ export const Cuestionario = () => {
   {textoPregunta}
 </button>                                
 }
+
+  </form>
+   
+
+
 
       </div>
       <nav aria-label="Page navigation example" id="pasarpag">
