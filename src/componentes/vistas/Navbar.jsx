@@ -54,13 +54,13 @@ export const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <a className="nav-link" href="">Inicio</a>
+                <a className="nav-link" href="#hero">Inicio</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">Materias</a>
+                <a className="nav-link" href="#services">Materias</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">Contactanos</a>
+                <a className="nav-link" href="#contact">Contactanos</a>
               </li>
             </ul>
             <a href="" className="btt ms-lg-3">Iniciar Sesión</a>

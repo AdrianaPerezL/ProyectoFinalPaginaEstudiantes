@@ -1,0 +1,52 @@
+
+
+.bodyLogin{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.card-body{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 18px 18px 15px -3px rgba(0,0,0,0.1);
+    
+}
+
+.botondiv{
+    display: flex;
+    ;
+}
+
+.btn-login{
+    border-radius: 90px;
+    background-color: #572ab0;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card-title{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+}
+
+.form-control{
+    height: 40px;
+    width: 463px;
+    border-radius: 16px;
+    background-color: #D9F3F0;
+    font-family: 'Poppins';
+}
