@@ -4,6 +4,7 @@ import { Navbar } from '../vistas/Navbar'
 import { Materias } from '../vistas/Materias'
 import { Index } from '../Index'
 import { Login } from '../vistas/Login'
+import { Registro } from '../vistas/Registro'
 
 
 export const Ruta = () => {
@@ -11,11 +12,13 @@ export const Ruta = () => {
 
     <>
 {/* <Navbar/>
- */}    <BrowserRouter>
+ */}     <BrowserRouter>
     <Routes>
          <Route path='/' element={<Index/>}></Route>
           <Route path='/materias' element={<Materias/>}></Route>
           <Route path='/login' element={<Login/>}></Route>
+          <Route path='/registro' element={<Registro/>}></Route>
+
           
     </Routes>
     </BrowserRouter>
