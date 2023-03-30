@@ -1,0 +1,110 @@
+body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  #sec1{
+    background-color: white;
+    width: 50% ;
+    float: left;
+    height: 648px; /* Ver como abarcar la pantalla completa */
+  
+  }
+  
+  #div1{
+    margin: 30%;
+    background-color: white;
+  }
+  
+  #boton1{
+    background-color: #572AB0;
+    color: white;
+    border-style: none;
+    border-radius: 8px;
+    width: 60%;
+    margin: 20px;
+    height: 40px;
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+    float: right;
+    margin-top: 90%;
+    margin-right: -200%;
+  }
+  
+  #sec2{
+    background-color: #0AD5BD;
+    height: 648px;
+    padding: 90px;
+  }
+  
+  #div2{
+    margin-left: 830px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  
+  #encabezado1{
+    margin: 20px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  
+  /* puntuacion quiz ------------------------------------------------------------------------------*/
+  #encabezado3{
+    text-align: center;
+    padding-top: 140px;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: larger;
+  }
+  
+  
+  #sec4 {
+     margin: 10%;
+     margin-bottom: 8%;
+     margin-top: 1%;
+     background-color: #D9F3F0;
+     padding: 10px;
+     padding-left: 50px;
+     padding-right: 50px;
+     padding-top: 50px;
+     border-color: #572AB0;
+     border-style: inset;
+     border-radius: 18px;
+  }
+  
+  #container1{
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #list{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #check{
+    margin-top: 10px;
+  }
+  
+  #boton2{
+    background-color: #572AB0;
+    color: white;
+    border-style: none;
+    border-radius: 18px;
+    width: 50%;
+    height: 40px;
+    margin: 20px;
+    margin-top: 30px;
+    margin-left: 260%;
+    float: right; 
+    font-size: 15px;
+  }
+  
+  #pasarpag {
+    margin-top: 25px;
+    margin-left: 20px;
+    color: #E855BE;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  #form{
+margin-top: 350px;
+  }
