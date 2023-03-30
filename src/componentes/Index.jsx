@@ -1,10 +1,11 @@
+import React, { useEffect, useState } from 'react'
 import '../assets/styles/navbar.css'
-import React from 'react'
 import about  from '../assets/img/about.jpg'
 import mined from '../assets/img/brands/mined.png'
 import recurso2 from '../assets/img/brands/Recurso2.png'
 import recurso3 from '../assets/img/brands/Recurso3.png'
 import fondo from '../assets/img/Recurso4.png'
+import reunion from '../assets/img/reunion-lluvia-ideas.jpg'
 
 
 export const Index = () => {
@@ -12,7 +13,9 @@ export const Index = () => {
 
   return (
     <>
-      <section id="hero" className="min-vh-100 d-flex align-items-center text-center">
+      <section id="hero" className="min-vh-100 d-flex align-items-center text-center" style={{ 
+      backgroundImage: `url(${fondo})` 
+    }}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -140,9 +143,12 @@ export const Index = () => {
           </div>
         </section>
         {/* COUNTER */}
-        <section id="counter" className="section-padding" style={{ 
-      backgroundImage: `url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg")` 
-    }}>
+        <section className="section-padding" style={{ 
+          background: `linear-gradient( rgba(78, 87, 212, 0.8), rgba(78, 87, 212, 0.8) ), url(${reunion})`,
+          backgroundPosition:"center",
+          backgroundSize:"cover",
+      }}
+     >
           <div className="container text-center">
             <div className="row g-4">
               <div className="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay={150}>
