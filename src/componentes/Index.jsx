@@ -9,7 +9,7 @@ import comunicacion from '../assets/img/comunicacion-linea.jpg'
 
 
 export const Index = () => {
-
+  
 
   return (
     <>

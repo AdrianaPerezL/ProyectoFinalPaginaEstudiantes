@@ -4,7 +4,7 @@ import Logo from '../../assets/img/Recurso1.png'
 import {Link} from 'react-router-dom'
 
 export const Navbar = () => {
-    
+ 
     const imgStyle = { width: '80px'}
 
   return (
