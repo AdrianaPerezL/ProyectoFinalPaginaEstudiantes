@@ -7,7 +7,26 @@ export const Progreso = () => {
 
     return (
         <>
-        <section id='insignias'>
+      <div id="confetti-wrapper">
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>  
+
+      <div id="encabezado3">
+          <h1>Tu Progreso</h1>
+    </div>
+
+      <section id='insignias'>
         <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
@@ -64,8 +83,9 @@ export const Progreso = () => {
 </div>
 </section>
 
+    </div>
 
-    
+     
         </>
 )
 };
