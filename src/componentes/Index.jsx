@@ -1,10 +1,11 @@
-import '../assets/styles/navbar.css'
 import React from 'react'
+import '../assets/styles/navbar.css'
 import about  from '../assets/img/about.jpg'
 import mined from '../assets/img/brands/mined.png'
 import recurso2 from '../assets/img/brands/Recurso2.png'
 import recurso3 from '../assets/img/brands/Recurso3.png'
 import fondo from '../assets/img/Recurso4.png'
+import comunicacion from '../assets/img/comunicacion-linea.jpg'
 
 
 export const Index = () => {
@@ -12,7 +13,9 @@ export const Index = () => {
 
   return (
     <>
-      <section id="hero" className="min-vh-100 d-flex align-items-center text-center">
+      <section id="hero" className="min-vh-100 d-flex align-items-center text-center" style={{ 
+      backgroundImage: `url(${fondo})` 
+    }}>
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -141,7 +144,7 @@ export const Index = () => {
         </section>
         {/* COUNTER */}
         <section id="counter" className="section-padding" style={{ 
-      backgroundImage: `url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg")` 
+      backgroundImage: `url(${comunicacion})` 
     }}>
           <div className="container text-center">
             <div className="row g-4">
