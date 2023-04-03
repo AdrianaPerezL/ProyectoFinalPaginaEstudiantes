@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../assets/styles/registro.css'
-import fondo from "../../assets/img/Recurso4.png";
+/* import '../../assets/styles/registro.css'
+ */import fondo from "../../assets/img/Recurso4.png";
 
 
 export const Registro = () => {

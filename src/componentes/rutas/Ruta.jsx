@@ -13,8 +13,8 @@ export const Ruta = () => {
   return (
 
     <>
-{/* <Navbar/>
- */}     <BrowserRouter>
+ <Navbar/>
+      <BrowserRouter>
     <Routes> 
           <Route path='/Navbar' element={<Navbar/>}></Route>
           <Route path='/' element={<Index/>}></Route>
