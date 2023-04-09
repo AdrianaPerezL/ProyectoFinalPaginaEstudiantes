@@ -341,12 +341,15 @@ export const Cuestionario = () => {
 
 {mostrar.mostrar === false && mostrar.ID === 6 && (
   <div>
+
   <Link to={"/Progreso"} id="boton1" style={{textDecoration: 'none', color: 'white'}} type="submit">
-  Enviar respuesta
+  Enviar respuestas
   </Link>
-{/* <button id="boton1" style={{textDecoration: 'none', color: 'white'}} type="submit" >Enviar respuesta
-</button>   */}        
+  <Link to={"/Materias"} id="boton1" style={{textDecoration: 'none', color: 'white', marginRight: '40%'}} type="submit">
+  Empezar de nuevo
+  </Link>  
   </div>
+  
 )}
 
 
@@ -359,46 +362,7 @@ export const Cuestionario = () => {
 }
 
   </form>
-   
-
-
-
       </div>
-      <nav aria-label="Page navigation example" id="pasarpag">
-              <ul className="pagination">
-                <li className="page-item">
-                  <a className="page-link" href="/" aria-label="Previous" style={{color: '#E855BE'}}>
-                    <span aria-hidden="true">«</span>
-                    <span className="sr-only" style={{color: '#E855BE'}}>
-                      Previous
-                    </span>
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="/" style={{color: '#E855BE'}}>
-                    1
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="/" style={{color: '#E855BE'}}>
-                    2
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="/" style={{color: '#E855BE'}}>
-                    3
-                  </a>
-                </li>
-                <li className="page-item">
-                  <a className="page-link" href="/" aria-label="Next" style={{color: '#E855BE'}}>
-                    <span aria-hidden="true">»</span>
-                    <span className="sr-only" style={{color: '#E855BE'}}>
-                      Next
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
      </div>
     </div>
   </section>

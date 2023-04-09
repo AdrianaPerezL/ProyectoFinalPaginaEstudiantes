@@ -14,7 +14,7 @@ export  function Materias() {
                         <figure>
                             <h2 class="materia">Ciencias</h2>
                             <p class="año">1° año</p>
-                            <button class="btn-materia m-2"><a href="quiz.html">Entrar</a> </button>
+                            <button class="btn-materia m-2"><a href="/Cuestionario">Entrar</a> </button>
                             <img className='imgMateria' src="https://cdn-icons-png.flaticon.com/512/2497/2497595.png" alt=""/>
                         </figure>
                     </article>

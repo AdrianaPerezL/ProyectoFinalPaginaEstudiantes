@@ -23,7 +23,7 @@ export const Ruta = () => {
           <Route path='/registro' element={<Registro/>}></Route>
           <Route path='/Progreso' element={<Progreso/>}></Route>
           <Route path='/Cuestionario' element={<Cuestionario/>}></Route>
-          
+      
 
 
 

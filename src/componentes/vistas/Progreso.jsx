@@ -1,5 +1,6 @@
 import React from 'react'
 import '../../assets/styles/Progreso.css'
+import { Link } from "react-router-dom";
 
 
 export const Progreso = () => {
@@ -35,12 +36,17 @@ export const Progreso = () => {
       <div class="col">
         <div class="service-card">
           <div class="icon-wrapper">
+          <Link to={"/Cuestionario"} style={{marginTop: '10px'}}> 
+           10
+          </Link>
             <i class="fa-solid fa-chart-line"></i>
           </div>
-          <h3>Tracking Lead</h3>
+          <h3>Nota Global</h3>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Quisquam consequatur necessitatibus eaque.
+            Tiempo:<a href='/'> 20:00</a>
+          </p>
+          <p>
+            Preguntas contestadas:<a href='/'> 15/15</a>
           </p>
         </div>
       </div>
@@ -51,7 +57,7 @@ export const Progreso = () => {
         <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id='letra'>
         Insignia #1
       </button>
     </h2>
@@ -61,7 +67,7 @@ export const Progreso = () => {
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id='letra'>
         Insignia #2
       </button>
     </h2>
@@ -71,7 +77,7 @@ export const Progreso = () => {
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" id='letra'>
          Insignia #3
       </button>
     </h2>
@@ -82,7 +88,7 @@ export const Progreso = () => {
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingFour">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour" id='letra'>
         Insignia #4
       </button>
     </h2>
@@ -93,7 +99,7 @@ export const Progreso = () => {
 
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingFive">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive" id='letra'>
         Insignia #5
       </button>
     </h2>
