@@ -1,0 +1,14 @@
+body{
+    background: white;
+    padding: 100px;
+}
+
+.timer{
+    text-align: center;
+    color: #0AD5BD;
+    text-shadow: 1px 1px #572AB0;
+    font-size: 40px;
+    font-family: monospace;
+    margin-left: -53%;
+    margin-top: -5%;
+}

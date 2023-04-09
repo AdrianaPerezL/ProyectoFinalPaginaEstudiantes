@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react";
 import '../../assets/styles/Cuestionario.css'
 import { Link } from "react-router-dom";
+import { Cronometro } from '../vistas/Cronometro'
 
 export const Cuestionario = () => {
     const [textoPregunta, setTextoPregunta] = useState("Siguiente");
@@ -55,6 +56,9 @@ export const Cuestionario = () => {
           <h1>Ciencias Sociales</h1>
           <h2>Quiz</h2>
     </div>
+    <lord-icon src="https://cdn.lordicon.com/uutnmngi.json" trigger="hover" colors="primary:#0ad5bd,secondary:#572ab0" style={{width: '60px', height: '60px', marginLeft: '10%'}}>
+      </lord-icon>
+      <Cronometro></Cronometro>
     <container id="container1">
       <section id="sec4">
         <div className="row">
@@ -342,10 +346,10 @@ export const Cuestionario = () => {
 {mostrar.mostrar === false && mostrar.ID === 6 && (
   <div>
 
-  <Link to={"/Progreso"} id="boton1" style={{textDecoration: 'none', color: 'white'}} type="submit">
+  <Link to={"/Progreso"} id="boton1" style={{textDecoration: 'none', color: 'white', marginRight: '6px%'}} type="submit">
   Enviar respuestas
   </Link>
-  <Link to={"/Materias"} id="boton1" style={{textDecoration: 'none', color: 'white', marginRight: '40%'}} type="submit">
+  <Link to={"/Materias"} id="boton5" style={{textDecoration: 'none', color: 'white'}} type="submit">
   Empezar de nuevo
   </Link>  
   </div>

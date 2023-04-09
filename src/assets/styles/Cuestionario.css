@@ -35,6 +35,22 @@ body {
     margin-top: 30%;
     margin-right: -5%;
     padding-top: 7px;
+    position: relative;
+  }
+
+  #boton5{
+    margin-left: -50%;
+    
+    background-color: #572AB0;
+    color: white;
+    border-style: none;
+    border-radius: 8px;
+    width: 30%;
+    height: 40px;
+    border-radius: 18px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 30%;
+    padding-top: 7px;
   }
   
   #sec2{
