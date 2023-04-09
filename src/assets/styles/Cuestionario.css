@@ -40,7 +40,6 @@ body {
 
   #boton5{
     margin-left: -50%;
-    
     background-color: #572AB0;
     color: white;
     border-style: none;
@@ -75,7 +74,7 @@ body {
     padding-top: 140px;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 40px;
-    font-weight: 600;
+    font-weight: 800;
   }
   
   

@@ -54,9 +54,9 @@ export const Cuestionario = () => {
     <>
     <div id="encabezado3">
           <h1>Ciencias Sociales</h1>
-          <h2>Quiz</h2>
+          <h2>Cuestionario</h2>
     </div>
-    <lord-icon src="https://cdn.lordicon.com/uutnmngi.json" trigger="hover" colors="primary:#0ad5bd,secondary:#572ab0" style={{width: '60px', height: '60px', marginLeft: '10%'}}>
+    <lord-icon src="https://cdn.lordicon.com/uutnmngi.json" trigger="hover" colors="primary:#0ad5bd,secondary:#572ab0" style={{width: '60px', height: '60px', marginLeft: '12%'}}>
       </lord-icon>
       <Cronometro></Cronometro>
     <container id="container1">

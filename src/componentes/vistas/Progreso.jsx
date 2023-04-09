@@ -8,7 +8,12 @@ export const Progreso = () => {
 
     return (
         <>
-      <div id="confetti-wrapper">
+          <div id="encabezado3">
+          <h1>Tu Progreso</h1>
+          </div>
+
+    <section id='progreso'> 
+    <div id="confetti-wrapper">
       <div class="confetti"></div>
       <div class="confetti"></div>
       <div class="confetti"></div>
@@ -22,12 +27,7 @@ export const Progreso = () => {
       <div class="confetti"></div>
       <div class="confetti"></div>
       <div class="confetti"></div>  
-
-      <div id="encabezado3">
-          <h1>Tu Progreso</h1>
-    </div>
-
-    <section id='progreso'> 
+    
 <section id="advertisers" class="advertisers-service-sec pt-5 pb-5">
   <div class="container">
     <div class="row">
@@ -110,8 +110,9 @@ export const Progreso = () => {
 </div>
 </section>
 </section>
+</div>
 </section>
-    </div>
+    
 
 
      

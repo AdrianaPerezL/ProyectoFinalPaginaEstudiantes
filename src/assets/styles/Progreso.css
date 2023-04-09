@@ -2,9 +2,9 @@ body {
   background: white;
 }
 
-#progreso{
+/* #progreso{
   margin-right: 1%;
-}
+} */
 
 .sec-icon {
   position: relative;
@@ -37,8 +37,7 @@ body {
 
 .advertisers-service-sec {
   background-color: #f5f5f5;
-  margin-right: 50px;
-  padding-left: 50px;
+  margin: 3%;
 } 
 
 .advertisers-service-sec span {
@@ -130,9 +129,10 @@ body {
 }
 
 #insignias{
-    margin-top: -26%;
+    margin-top: -23%;
     width: 50%;
     margin-right: 10%;
+    margin-left: 40%;
     float: right;
 }
 
@@ -145,7 +145,7 @@ body {
     overflow: hidden;  
     position: absolute;
     height: 100%;
-    width: 90%;
+    width: 100%;
   
   }
   
@@ -185,7 +185,6 @@ body {
   
   .confetti:nth-child(5) {
     background-color: #E855BE;
-    
     left: 50%;
     animation-delay: -4s;
   }
