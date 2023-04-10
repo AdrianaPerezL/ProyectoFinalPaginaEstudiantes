@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from "react";
 import '../../assets/styles/Cuestionario.css'
 import { Link } from "react-router-dom";
-import { Cronometro } from '../vistas/Cronometro'
+import { Cronometro } from '../vistas/Cronometro';
+import Swal from 'sweetalert2'
 
 export const Cuestionario = () => {
     const [textoPregunta, setTextoPregunta] = useState("Siguiente");
@@ -49,6 +50,21 @@ export const Cuestionario = () => {
       e.preventDefault();
       console.log(respuestasFormulario);
     }
+
+    Swal.fire({
+      title: 'Indicaciones:',
+      text: "1. Presiona el cronometro antes de empezar el cuestionario 2. Selecciona una respuesta por cada pregunta",
+      footer: "Buena Suerte!",
+      width: 600,
+      padding: '3em',
+      color: '#572AB0',
+
+      backdrop: `
+        rgba(0,0,123,0.4)
+        left top
+        no-repeat
+      `
+    })
   
   return (
     <>
@@ -375,11 +391,6 @@ export const Cuestionario = () => {
   
 </section>
 </container>
-
-
-    
-    </>
+</>
   )
 };
-
-
