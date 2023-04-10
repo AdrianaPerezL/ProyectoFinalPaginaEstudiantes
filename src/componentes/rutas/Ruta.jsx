@@ -24,11 +24,6 @@ export const Ruta = () => {
           <Route path='/Progreso' element={<Progreso/>}></Route>
           <Route path='/Cuestionario' element={<Cuestionario/>}></Route>
           <Route path='/Cronometro' element={<Cronometro/>}></Route>
-      
-
-
-
-          
     </Routes>
     </BrowserRouter>
     </>
