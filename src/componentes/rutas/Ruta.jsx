@@ -8,6 +8,7 @@ import { Registro } from '../vistas/Registro'
 import { Progreso } from '../vistas/Progreso'
 import { Cuestionario } from '../vistas/Cuestionario'
 import { Cronometro } from '../vistas/Cronometro'
+import { Perfil } from '../vistas/Perfil'
 
 export const Ruta = () => {
   return (
@@ -24,6 +25,8 @@ export const Ruta = () => {
           <Route path='/Progreso' element={<Progreso/>}></Route>
           <Route path='/Cuestionario' element={<Cuestionario/>}></Route>
           <Route path='/Cronometro' element={<Cronometro/>}></Route>
+          <Route path='/Perfil' element={<Perfil/>}></Route>
+          
     </Routes>
     </BrowserRouter>
     </>

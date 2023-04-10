@@ -1,50 +1,126 @@
 import React from 'react'
+import '../../assets/styles/perfil.css'
 
 export const Perfil = () => {
   return (
     
-    <div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"/><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Profile Settings</h4>
+    <div className="container">
+    <div className="main-body">
+   
+      <div className="row gutters-sm">
+        <div className="col-md-4 mb-3">
+          <div className="card">
+            <div className="card-body">
+              <div className="d-flex flex-column align-items-center text-center">
+                <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="Admin" className="rounded-circle" width={150} />
+                <div className="mt-3">
+                  <h4>Adriana Pérez</h4>
+                  <p className="text-secondary mb-1">Estudiante</p>
+                  <p className="text-muted font-size-sm">1° año</p>
+                  <button className="btn btn-edit" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
                 </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""/></div>
-                    <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"/></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""/></div>
-                    <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""/></div>
-                    <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""/></div>
-                    <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address line 2" value=""/></div>
-                    <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address line 2" value=""/></div>
-                    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""/></div>
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""/></div>
-                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""/></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""/></div>
-                    <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"/></div>
-                </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+              </div>
             </div>
+          </div>
+         
         </div>
-        <div class="col-md-4">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center experience"><span>Edit Experience</span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>Experience</span></div><br/>
-                <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text" class="form-control" placeholder="experience" value=""/></div> <br/>
-                <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""/></div>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title agregar" id="exampleModalLabel">Editar mi perfil</h5>
+
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <div class="form-outline">
+                    
+                    
+                    <label class="form-label" for="typeText">Fecha de nacimiento</label>
+                    <input type="date" id="typeText" class="form-control mb-3" placeholder="Edad" />
+                   
+                    <label class="form-label" for="typeText">Foto</label>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="foto" aria-label="Upload"/>
+                      </div>
+                      <label class="form-label" for="typeText">Centro Educativo</label>
+                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Centro Educativo" />
+                      <label class="form-label" for="typeText">Grado</label>
+                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Grado" />
+
+                  </div>
+            </div>
+             
+              <button type="button" class="btn-edit m-4 p-2">Editar</button>
+        
+          </div>
         </div>
+      </div>
+
+
+        <div className="col-md-8">
+          <div className="card mb-3">
+            <div className="card-body">
+              <div className="row">
+                <div className="col-sm-3">
+                  <h6 className="mb-0">Nombre</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                  Adriana Pérez
+                </div>
+              </div>
+              
+              <hr />
+              <div className="row">
+                <div className="col-sm-3">
+                  <h6 className="mb-0">NIE</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                  0123456789
+                </div>
+              </div>
+              
+              <hr />
+              <div className="row">
+                <div className="col-sm-3">
+                  <h6 className="mb-0">Correo</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                  a@gmail.com
+                </div>
+              </div>
+              <hr />
+              <div className="row">
+                <div className="col-sm-3">
+                  <h6 className="mb-0">Fecha de nacimiento</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                  1 enero 2000
+                </div>
+              </div>
+              <hr />
+              <div className="row">
+                <div className="col-sm-3">
+                  <h6 className="mb-0">Institución</h6>
+                </div>
+                <div className="col-sm-9 text-secondary">
+                  Centro Escolar ...
+                </div>
+              </div>
+              <hr />
+             
+              <div className="row">
+                <div className="col-sm-12">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+                  
+        </div>
+      </div>
     </div>
-</div>
-
-
-    
+  </div>
   )
 }

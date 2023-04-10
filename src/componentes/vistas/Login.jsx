@@ -35,7 +35,7 @@ export const Login = () => {
           <div className="card col-8 col-sm-4 col-md-4 ">
             <div className="card-body">
               <h5 className="card-title text-center w-100">Iniciar Sesión</h5>
-              <form action id="form" className="w-100">
+              <form id="form" className="w-100">
                 <div className="form-group w-100">
                   <label className="mt-4">Email</label>
                   <br />
