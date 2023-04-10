@@ -86,12 +86,22 @@ body {
      padding: 10px;
      padding-left: 50px;
      padding-right: 50px;
-     padding-top: 50px;
      border-color: #572AB0;
      border-style: inset;
      border-radius: 18px;
   }
-  
+
+  #botonindicaciones{
+    background-color: #572AB0;
+    color: white;
+    border-style: none;
+    border-radius: 18px;
+    width: 20%;
+    height: 40px;
+    font-size: 15px;
+    margin-left: 10%;
+  }
+
   #container1{
     padding: 10px;
     font-family: 'Poppins', sans-serif;

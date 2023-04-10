@@ -9,6 +9,27 @@ import { Cronometro } from '../vistas/Cronometro';
 
 
 export const Cuestionario = () => {
+  
+  /* const MySwal = withReactContent(Swal)
+
+  MySwal.fire({
+  title: 'Indicaciones:',
+  text: "1. Presiona el cronometro antes de empezar el cuestionario 2. Selecciona una respuesta por cada pregunta",
+  footer: "Buena Suerte!",
+  width: 600,
+  padding: '3em',
+  color: '#572AB0',
+
+  backdrop: `
+    rgba(0,0,123,0.4)
+    left top
+    no-repeat
+  `
+}); */
+
+
+
+
     const [textoPregunta, setTextoPregunta] = useState("Siguiente");
 
     const [pregunta, setPregunta] = useState(1);
@@ -52,7 +73,7 @@ export const Cuestionario = () => {
     const enviarRespuesta = (e) =>{
       e.preventDefault();
       console.log(respuestasFormulario);
-    }
+    };
 
 
 /* 
@@ -71,41 +92,44 @@ export const Cuestionario = () => {
       `
     })
   */
-
-const MySwal = withReactContent(Swal)
-
-MySwal.fire({
-  title: 'Indicaciones:',
-  text: "1. Presiona el cronometro antes de empezar el cuestionario 2. Selecciona una respuesta por cada pregunta",
-  footer: "Buena Suerte!",
-  width: 600,
-  padding: '3em',
-  color: '#572AB0',
-
-  backdrop: `
-    rgba(0,0,123,0.4)
-    left top
-    no-repeat
-  `
-})
-
+    const MySwal = withReactContent(Swal);
+    const mostrarAlerta = () =>{
+      MySwal.fire({
+        title: 'Indicaciones:',
+        text: "1. Presiona el cronometro antes de empezar el cuestionario 2. Selecciona una respuesta por cada pregunta",
+        footer: "Buena Suerte!",
+        width: 600,
+        padding: '3em',
+        color: '#572AB0',
+      
+        backdrop: `
+          rgba(0,0,123,0.4)
+          left top
+          no-repeat
+        `
+      });
+  };
+    
   return (
     <>
+
     <div id="encabezado3">
           <h1>Ciencias Sociales</h1>
           <h2>Cuestionario</h2>
-    </div>
-    <lord-icon src="https://cdn.lordicon.com/uutnmngi.json" trigger="hover" colors="primary:#0ad5bd,secondary:#572ab0" style={{width: '60px', height: '60px', marginLeft: '12%'}}>
+    </div><button id="botonindicaciones" onClick={() =>mostrarAlerta()}>Indicaciones</button>
+    <lord-icon src="https://cdn.lordicon.com/uutnmngi.json" trigger="hover" colors="primary:#0ad5bd,secondary:#572ab0" style={{width: '60px', height: '60px', marginLeft: '35%'}}>
       </lord-icon>
-      <Cronometro></Cronometro>
+      <Cronometro></Cronometro> 
+      
     <container id="container1">
       <section id="sec4">
         <div className="row">
           <div className="col-4" id="list">
             <div className="list-group" id="list-tab" role="tablist">
 
-  <form onSubmit={enviarRespuesta}>
+  <form onSubmit={enviarRespuesta} style={{paddingTop: '4%'}}>
     {mostrar.mostrar === true && mostrar.ID === 1 && (
+      
       <section>
 
       <div id='divgrande'>
@@ -208,7 +232,7 @@ MySwal.fire({
         class="form-check-input"
         type="radio"
         name="pregunta2"
-        id="flexRadioDefault1"
+        id="flexRadioDefault2"
       />
       <label class="form-check-label" for="flexRadioDefault3" id='label'>
         Lorem
@@ -384,6 +408,21 @@ MySwal.fire({
 
 {mostrar.mostrar === false && mostrar.ID === 6 && (
   <div>
+     <div class="container">
+      <table  style={{width: '100%'}}>
+        <tbody class="table table-striped table-hover table-responsive">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Pregunta</th>
+            <th scope="col">Opcion seleccionada</th>
+          </tr>
+        </thead>
+        <tbody id="lista-informacion"></tbody>
+        <tr id="listDefault"></tr>
+      </tbody>
+    </table>
+    </div>
 
   <Link to={"/Progreso"} id="boton1" style={{textDecoration: 'none', color: 'white', marginRight: '6px%'}} type="submit">
   Enviar respuestas
@@ -417,3 +456,4 @@ MySwal.fire({
 </>
   )
 };
+
