@@ -1,8 +1,32 @@
 import "../../assets/styles/login.css";
 import React from "react";
 import fondo from "../../assets/img/Recurso4.png";
+import {useState} from "react"
 
 export const Login = () => {
+  const datosLogin = {
+    email: "",
+    contraseña: ""
+  }
+
+  const initialStateInput = {
+    input: "",
+    message: '',
+    state: false
+  }
+
+  const [login, setLogin] = useState(datosLogin);
+
+  const [alerta, setAlerta] = useState([initialStateInput]);
+
+  const ManejarEventoDeInputs = (e) =>{
+      //la propiedad target del event nos permitirá obtener los valores
+      const name = e.target.name;
+      const value = e.target.value;
+
+    //actualizamos los valores capturados a nuestro estado de formulario
+    setFormulario({...login, [name]: value});
+  }
   return (
     <>
       <div className="vh-100" style={{ backgroundImage: `url(${fondo})`,  backgroundPosition:"center",
@@ -21,6 +45,9 @@ export const Login = () => {
                     placeholder="Escribe tu correo"
                     id="inputEmail"
                     aria-describedby="inputGroup-sizing-default"
+                    name="email"
+                    value={login.email}
+                    onChange={ManejarEventoDeInputs}
                   />
                   <label className="mt-4">Contraseña</label>
                   <input
@@ -29,6 +56,8 @@ export const Login = () => {
                     placeholder="Escribe tu correo"
                     id="inputEmail"
                     aria-describedby="inputGroup-sizing-default"
+                    value={Login.contraseña}
+                    onChange={ManejarEventoDeInputs}
                   />
                 </div>
                 <div className="botondiv w-100">
