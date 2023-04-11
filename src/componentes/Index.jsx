@@ -6,6 +6,9 @@ import recurso2 from '../assets/img/brands/Recurso2.png'
 import recurso3 from '../assets/img/brands/Recurso3.png'
 import fondo from '../assets/img/Recurso4.png'
 import reunion from '../assets/img/reunion-lluvia-ideas.jpg'
+import { Link } from "react-router-dom";
+import { Registro } from './vistas/Registro'
+
 
 
 export const Index = () => {
@@ -23,8 +26,9 @@ export const Index = () => {
                 <h5 className="text-white mt-3 mb-4" data-aos="fade-right">Una manera mas rapida para el aprendizaje
                 </h5>
                 <div data-aos="fade-up" data-aos-delay={50}>
-                  <a href="formulario.html" className="btn btn-brand me-2">Registrarse</a>
-                  <a href="login.html" className="btn btn-light ms-2">Iniciar Sesión</a>
+                
+                <Link to={"/registro"} className="btn btn-brand me-2">Registrarse</Link>
+                <Link to={"/login"} className="btn btn-light ms-2">Iniciar Sesión</Link>
                 </div>
               </div>
             </div>
@@ -38,7 +42,8 @@ export const Index = () => {
                 <div className="section-title">
                   <h1 className="display-4 fw-semibold">Sobre nosotros</h1>
                   <div className="line" />
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae harum, consequuntur temporibus eaque unde quibusdam possimus corporis ullam odio illum fugit explicabo corrupti facere obcaecati suscipit, iste, totam adipisci earum.</p>
+                  <p>Aula 503 es una plataforma creada para fortalecer los conocimientos de los estudiantes de educación básica y media.
+                  </p>
                 </div>
               </div>
             </div>
@@ -47,25 +52,24 @@ export const Index = () => {
                 <img className="imgg" src={about} alt="" />
               </div>
               <div data-aos="fade-down" data-aos-delay={150} className="col-lg-5">
-                <h1>About</h1>
-                <p className="mt-3 mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit quo reiciendis
-                  ad.</p>
+                <h1>Conocenos</h1>
+                <p className="mt-3 mb-4">Aula 503 posee diversas características para promover el aprendizaje en distintas materias</p>
                 <div className="d-flex pt-4 mb-3">
                   <div className="iconbox me-4">
                     <i className="ri-mail-send-fill" />
                   </div>
                   <div>
-                    <h5>We are Awesome</h5>
-                    <p>Consectetur adipisicing elit. Corporis nesciunt aut temporibus!</p>
+                    <h5>Ciencias</h5>
+                    <p>Aprende los conocimientos en las diferentes ramas de las ciencias naturales</p>
                   </div>
                 </div>
                 <div className="d-flex mb-3">
                   <div className="iconbox me-4">
-                    <i className="ri-user-5-fill" />
+                    <i className="fa-solid fa-atom-simple" style={{color: "#4e57d4",}} />
                   </div>
                   <div>
-                    <h5>We are Awesome</h5>
-                    <p>Consectetur adipisicing elit. Corporis nesciunt aut temporibus!</p>
+                    <h5>Estudios Sociales</h5>
+                    <p>Conoce más sobre la sociedad</p>
                   </div>
                 </div>
                 <div className="d-flex">

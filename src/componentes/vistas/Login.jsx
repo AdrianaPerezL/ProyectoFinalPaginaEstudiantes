@@ -133,7 +133,7 @@ return errors;
           <div className="card col-8 col-sm-4 col-md-4 ">
             <div className="card-body">
               <h5 className="card-title text-center w-100">Iniciar Sesión</h5>
-              <form id="form" className="w-100" onSubmit={handleLoginSession}>
+              <form id="" className="w-100" onSubmit={handleLoginSession}>
                 <div className="form-group w-100">
                   <label className="mt-4">Email</label>
                   <br />
@@ -161,7 +161,7 @@ return errors;
                 </div>
                 <div className="botondiv w-100">
                   <button className="mt-2 btn-login w-100" type="submit">
-                    <a href="">Enviar</a>{" "}
+                    <a href="" style={{textDecoration: "none"}}>Enviar</a>
                   </button>
                 </div>
                 <div role="alert" id="alerta"></div>

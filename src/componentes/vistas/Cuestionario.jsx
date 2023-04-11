@@ -427,9 +427,13 @@ export const Cuestionario = () => {
   <Link to={"/Progreso"} id="boton1" style={{textDecoration: 'none', color: 'white', marginRight: '6px%'}} type="submit">
   Enviar respuestas
   </Link>
-  <Link to={"/Materias"} id="boton5" style={{textDecoration: 'none', color: 'white'}} type="submit">
+  <button onClick={
+    () => { setMostrar( { mostrar:true, ID:1} )
+            setTextoPregunta("Siguiente")
+          }
+    } id="boton5" style={{textDecoration: 'none', color: 'white'}} type="submit">
   Empezar de nuevo
-  </Link>  
+  </button>  
   </div>
   
 )}
