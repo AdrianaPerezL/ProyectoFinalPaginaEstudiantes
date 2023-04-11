@@ -8,6 +8,8 @@ import fondo from '../assets/img/Recurso4.png'
 import reunion from '../assets/img/reunion-lluvia-ideas.jpg'
 import { Link } from "react-router-dom";
 import { Registro } from './vistas/Registro'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFlask, faEarthAmericas, faFlaskVial, faDna } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -56,8 +58,8 @@ export const Index = () => {
                 <p className="mt-3 mb-4">Aula 503 posee diversas características para promover el aprendizaje en distintas materias</p>
                 <div className="d-flex pt-4 mb-3">
                   <div className="iconbox me-4">
-                    <i className="ri-mail-send-fill" />
-                  </div>
+                  <FontAwesomeIcon icon={faFlask} style={{color: "#4e57d4",}} /> 
+</div>
                   <div>
                     <h5>Ciencias</h5>
                     <p>Aprende los conocimientos en las diferentes ramas de las ciencias naturales</p>
@@ -65,20 +67,11 @@ export const Index = () => {
                 </div>
                 <div className="d-flex mb-3">
                   <div className="iconbox me-4">
-                    <i className="fa-solid fa-atom-simple" style={{color: "#4e57d4",}} />
+                  <FontAwesomeIcon icon={faEarthAmericas} style={{color: "#4e57d4",}} />                 
                   </div>
                   <div>
                     <h5>Estudios Sociales</h5>
                     <p>Conoce más sobre la sociedad</p>
-                  </div>
-                </div>
-                <div className="d-flex">
-                  <div className="iconbox me-4">
-                    <i className="ri-rocket-2-fill" />
-                  </div>
-                  <div>
-                    <h5>We are Awesome</h5>
-                    <p>Consectetur adipisicing elit. Corporis nesciunt aut temporibus!</p>
                   </div>
                 </div>
               </div>
@@ -91,9 +84,9 @@ export const Index = () => {
             <div className="row">
               <div className="col-12 text-center" data-aos="fade-down" data-aos-delay={150}>
                 <div className="section-title">
-                  <h1 className="display-4 fw-semibold">Cursos</h1>
+                  <h1 className="display-4 fw-semibold">Materias</h1>
                   <div className="line" />
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse laboriosam hic est error dolorum odio, amet molestiae! Porro similique, consectetur, nam modi dolore quis deleniti itaque iure officia facere ea?</p>
+                  <p>Con un total de 4 materias para que te prepares en el tema de las ciencias</p>
                 </div>
               </div>
             </div>
@@ -103,46 +96,38 @@ export const Index = () => {
                   <div className="iconbox">
                     <i className="ri-pen-nib-fill" />
                   </div>
-                  <h5 className="mt-4 mb-3">Matematicas</h5>
+                  <h5 className="mt-4 mb-3">Física</h5>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
                 </div>
               </div>
               <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={250}>
                 <div className="service theme-shadow p-lg-5 p-4">
                   <div className="iconbox">
-                    <i className="ri-stack-fill" />
+                  <FontAwesomeIcon icon={faFlaskVial} />
                   </div>
-                  <h5 className="mt-4 mb-3">Lenguaje</h5>
+                  <h5 className="mt-4 mb-3">Química</h5>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
                 </div>
               </div>
               <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={350}>
                 <div className="service theme-shadow p-lg-5 p-4">
                   <div className="iconbox">
-                    <i className="ri-ruler-2-fill" />
+                  <FontAwesomeIcon icon={faDna} />                  
                   </div>
-                  <h5 className="mt-4 mb-3">Ciencias</h5>
+                  <h5 className="mt-4 mb-3">Biología</h5>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
                 </div>
               </div>
               <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={450}>
                 <div className="service theme-shadow p-lg-5 p-4">
                   <div className="iconbox">
-                    <i className="ri-pie-chart-2-fill" />
+                  <FontAwesomeIcon icon={faEarthAmericas} />                 
                   </div>
                   <h5 className="mt-4 mb-3">Sociales</h5>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
                 </div>
               </div>
-              <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={550}>
-                <div className="service theme-shadow p-lg-5 p-4">
-                  <div className="iconbox">
-                    <i className="ri-code-box-line" />
-                  </div>
-                  <h5 className="mt-4 mb-3">Ingles</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
-                </div>
-              </div>
+         
             </div>
           </div>
         </section>
@@ -169,7 +154,7 @@ export const Index = () => {
               </div>
               <div className="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay={450}>
                 <h1 className="text-white display-4">100+</h1>
-                <h6 className="text-uppercase mb-0 text-white mt-3">Maestores </h6>
+                <h6 className="text-uppercase mb-0 text-white mt-3">Maestros </h6>
               </div>
             </div>
           </div>

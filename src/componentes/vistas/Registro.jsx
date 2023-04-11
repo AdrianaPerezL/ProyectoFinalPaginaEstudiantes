@@ -18,9 +18,9 @@ export const Registro = () => {
 
         //Estado inicial para la alerta
         const initialStateInput = {
-            input: "",
-            message: '',
-            state: false 
+          valorInput:'',
+          mensaje: '',
+          estado:false
         };
 
        
@@ -55,11 +55,11 @@ export const Registro = () => {
 
     //ordenar los datos para enviar la validación
     let verificarInputs = [
-        { NIE: "NIE", value: formulario.NIE},
-        { email: "email", value: formulario.email},
-        { foto: "foto", value: formulario.foto},
-        { telefono: "telefono", value: formulario.telefono},
-        { direccion: "direccion", value: formulario.direccion},
+        { nombre: "NIE", value: formulario.NIE},
+        { nombre: "email", value: formulario.email},
+        { nombre: "foto", value: formulario.foto},
+        { nombre: "telefono", value: formulario.telefono},
+        { nombre: "direccion", value: formulario.direccion},
     ];
 
     //Enviar los datos a la función de validación y se reciben
@@ -103,7 +103,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput:valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado:true
         });
       }else{
@@ -122,7 +122,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput:valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado:true
         });
       }else{
@@ -140,7 +140,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput:valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado:true
         });
       }else{
@@ -158,7 +158,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput:valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado:true
         });
       }else{
@@ -176,7 +176,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput:valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado:true
         });
       }else{
@@ -202,6 +202,7 @@ datosDelFormulario.map((valorInput) =>{
 return errors;
 };
   return (
+    
     <div className="" style={{ backgroundImage: `url(${fondo})`,  backgroundPosition:"center",
     backgroundSize:"cover" }}>
         
@@ -215,24 +216,59 @@ return errors;
                 
                   <div className="input-box">
                     <span className="details">NIE</span>
-                    <input type="number" placeholder="Ingresa tu NIE" name='NIE' value={Registro.NIE} onChange={ManejarEventoDeInputs}/>
+                    <input type="number" placeholder="Ingresa tu NIE" name='NIE' value={formulario.NIE} onChange={ManejarEventoDeInputs}/>
+                  {
+                    alerta.filter(input => input.valorInput == "NIE" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="input-box">
                     <span className="details">Email</span>
-                    <input type="text" placeholder="Ingresa tu email" name='email' value={Registro.email} onChange={ManejarEventoDeInputs}/>
+                    <input type="text" placeholder="Ingresa tu email" name='email' value={formulario.email} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "email" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="input-box">
                     <span className="details">Numero telefonico</span>
-                    <input type="number" placeholder="Ingresa tu Numero telefonico" name='telefono' value={Registro.telefono} onChange={ManejarEventoDeInputs}/>
+                    <input type="number" placeholder="Ingresa tu Numero telefonico" name='telefono' value={formulario.telefono} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "telefono" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="input-box">
                     <span className="details">Foto</span>
-                    <input type="file" placeholder="Ingresa tu Numero telefonico" name='foto' value={Registro.foto} onChange={ManejarEventoDeInputs}/>
+                    <input type="file" placeholder="Ingresa foto" name='foto' value={formulario.foto} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "foto" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                  
                   <div className="input-box">
                     <span className="details">Dirección</span>
-                    <input type="text" placeholder="Ingresa tu dirección" name='direccion' value={Registro.direccion} onChange={ManejarEventoDeInputs}/>
+                    <input type="text" placeholder="Ingresa tu dirección" name='direccion' value={formulario.direccion} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "direccion" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   
                 </div>

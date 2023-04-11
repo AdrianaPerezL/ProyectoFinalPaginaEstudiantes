@@ -81,7 +81,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput: valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado: true
         });
       }else{
@@ -100,7 +100,7 @@ datosDelFormulario.map((valorInput) =>{
 
         errors.push({
           valorInput: valorInput.nombre,
-          mensaje: 'Campo requerido',
+          mensaje: '*Campo requerido',
           estado: true
         });
       }else{
@@ -144,9 +144,16 @@ return errors;
                     id="inputEmail"
                     aria-describedby="inputGroup-sizing-default"
                     name="email"
-                    value={Login.email}
+                    value={login.email}
                     onChange={ManejarEventoDeInputs}
                   />
+                  {
+                    alerta.filter(input => input.valorInput == "email" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   <label className="mt-4">Contraseña</label>
                   <input
                     className="w-100 mt-2 mb-2 form-control"
@@ -155,9 +162,16 @@ return errors;
                     id="inputEmail"
                     aria-describedby="inputGroup-sizing-default"
                     name= 'contraseña'
-                    value={Login.contraseña}
+                    value={login.contraseña}
                     onChange={ManejarEventoDeInputs}
                   />
+                  {
+                    alerta.filter(input => input.valorInput == "contraseña" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                 </div>
                 <div className="botondiv w-100">
                   <button className="mt-2 btn-login w-100" type="submit">
