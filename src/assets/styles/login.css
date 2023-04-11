@@ -23,7 +23,7 @@
 
 .botondiv{
     display: flex;
-    ;
+    
 }
 
 .btn-login{
@@ -44,9 +44,23 @@
 }
 
 .form-control{
-    height: 40px;
-    width: 463px;
-    border-radius: 16px;
-    background-color: #D9F3F0;
+   
     font-family: 'Poppins';
+    border-color: #9b59b6;
+
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+
+.form-control:focus{
+    border-color: #9b59b6;
+    box-shadow: none;
 }

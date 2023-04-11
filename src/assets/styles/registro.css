@@ -17,10 +17,12 @@
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 .containerform .title{
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
   position: relative;
   text-align: center;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 .content form .user-details{
