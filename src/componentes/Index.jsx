@@ -15,6 +15,154 @@ import { faFlask, faEarthAmericas, faFlaskVial, faDna } from '@fortawesome/free-
 
 export const Index = () => {
 
+  const datosContacto = {
+    PrimerNombre: "",
+    apellido: "",
+    email: "",
+    nie: "",
+    texto: ""
+  }
+
+  const initialStateInput = {
+    input: "",
+    message: '',
+    state: false
+  }
+
+  const [contacto, setContacto] = useState(datosContacto);
+
+  const [alerta, setAlerta] = useState([initialStateInput]);
+
+  const ManejarEventoDeInputs = (e) =>{
+    //la propiedad target del event nos permitirá obtener los valores
+    const name = e.target.name;
+    const value = e.target.value;
+
+  //actualizamos los valores capturados a nuestro estado de formulario
+  setContacto({...contacto, [name]: value});
+}
+
+const handleLoginSession = (e) =>{
+  e.preventDefault();
+
+  let verificarInputs = [
+    {nombre: "PrimerNombre", value: contacto.PrimerNombre},
+    {nombre: "apellido", value: contacto.apellido},
+    {nombre: "email", value: contacto.email},
+    {nombre: "nie", value: contacto.nie},
+    {nombre: "texto", value: contacto.texto},
+];
+
+   const datosValidados = ValidarInputs(verificarInputs)
+
+   console.log(datosValidados,"-------")
+
+ setAlerta(datosValidados);
+
+ const totalValidaciones = datosValidados.filter(input => input.estado === false).map
+ ((estado) => {return false});
+
+ console.log("Total de validaciones:", totalValidaciones.length);
+
+ if(totalValidaciones.length >=1){
+   console.log("Enviar al servidor");
+ }
+
+};
+
+const ValidarInputs = (data) =>{
+  console.log(data);
+
+let errors = [];
+
+const datosDelFormulario = data;
+
+//Proceso de validación
+datosDelFormulario.map((valorInput) =>{
+  if(valorInput.nombre === "PrimerNombre"){
+    if(valorInput.value === '' || valorInput.value === null){
+
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '*Campo requerido',
+        estado: true
+      });
+    }else{
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '',
+        estado: false
+      })
+    }
+  }else if(valorInput.nombre === "apellido"){
+    if(valorInput.value === '' || valorInput.value === null){
+
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '*Campo requerido',
+        estado: true
+      });
+    }else{
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '',
+        estado: false
+      })
+    }
+  }else if(valorInput.nombre === "email"){
+    if(valorInput.value === '' || valorInput.value === null){
+
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '*Campo requerido',
+        estado: true
+      });
+    }else{
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '',
+        estado: false
+      })
+
+    }
+  }else if(valorInput.nombre === "nie"){
+    if(valorInput.value === '' || valorInput.value === null){
+
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '*Campo requerido',
+        estado: true
+      });
+    }else{
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '',
+        estado: false
+      })
+
+    }
+  }else if(valorInput.nombre === "texto"){
+    if(valorInput.value === '' || valorInput.value === null){
+
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '*Campo requerido',
+        estado: true
+      });
+    }else{
+      errors.push({
+        valorInput: valorInput.nombre,
+        mensaje: '',
+        estado: false
+      })
+
+    }
+  }
+  }
+)
+
+return errors;
+};
 
   return (
     <>
@@ -204,24 +352,56 @@ export const Index = () => {
             </div>
             <div className="row justify-content-center" data-aos="fade-down" data-aos-delay={250}>
               <div className="col-lg-8">
-                <form action="#" className="row g-3 p-lg-5 p-4 bg-white theme-shadow">
+                <form  className="row g-3 p-lg-5 p-4 bg-white theme-shadow" onSubmit={handleLoginSession}>
                   <div className="form-group col-lg-6">
-                    <input type="text" className="form-control" placeholder="Primer nombre" />
+                    <input type="text" className="form-control" placeholder="Primer nombre" name='PrimerNombre' value={contacto.PrimerNombre} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "PrimerNombre" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="form-group col-lg-6">
-                    <input type="text" className="form-control" placeholder="Primer apellido" />
+                    <input type="text" className="form-control" placeholder="Primer apellido" name='apellido' value={contacto.apellido} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "apellido" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="form-group col-lg-12">
-                    <input type="email" className="form-control" placeholder="Email" />
+                    <input type="email" className="form-control" placeholder="Email" name='email' value={contacto.email} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "email" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="form-group col-lg-12">
-                    <input type="text" className="form-control" placeholder="Centro Escolar" />
+                    <input type="number" className="form-control" placeholder="NIE" name='nie' value={contacto.nie} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "nie" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="form-group col-lg-12">
-                    <input type="text" className="form-control" placeholder="NIE" />
-                  </div>
-                  <div className="form-group col-lg-12">
-                    <textarea name="message" rows={5} className="form-control" placeholder="Ingresar Mensaje" defaultValue={""} />
+                    <textarea name="texto" rows={5} className="form-control" placeholder="Ingresar Mensaje" defaultValue={""} value={contacto.texto} onChange={ManejarEventoDeInputs}/>
+                    {
+                    alerta.filter(input => input.valorInput == "texto" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                   </div>
                   <div className="form-group col-lg-12 d-grid">
                     <button className="btn btn-brand">Enviar Mensaje </button>

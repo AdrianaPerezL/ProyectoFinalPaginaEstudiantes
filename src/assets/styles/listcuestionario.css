@@ -1,0 +1,25 @@
+.cartitas{
+    border-color: #572ab0;
+}
+
+.btn-start{
+    border-radius: 30px;
+    background-color: #E855BE;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    list-style: none;
+}
+
+.figureCuestionario{
+}
+
+.parrafoCuestionario{
+    margin: 10px;
+    color: black;
+    text-align: justify;
+    
+}

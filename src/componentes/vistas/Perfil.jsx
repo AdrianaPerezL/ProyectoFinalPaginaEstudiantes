@@ -1,7 +1,153 @@
 import React from 'react'
 import '../../assets/styles/perfil.css'
+import { useState } from 'react'
+
 
 export const Perfil = () => {
+
+  const editPerfil = {
+    fechaNacimiento: "",
+    foto: "",
+    escuela: "",
+    grado: ""
+  }
+
+  const initialStateInput = {
+    input: "",
+    message: '',
+    state: false
+  }
+
+  const [editar, setEditar] = useState(editPerfil);
+
+  const [alerta, setAlerta] = useState([initialStateInput]);
+
+  const ManejarEventoDeInputs = (e) =>{
+    //la propiedad target del event nos permitirá obtener los valores
+    const name = e.target.name;
+    const value = e.target.value;
+
+  //actualizamos los valores capturados a nuestro estado de formulario
+  setEditar({...editar, [name]: value});
+}
+
+const handleEditSession = (e) =>{
+  e.preventDefault();
+
+  let verificarInputs = [
+    {nombre: "fechaNacimiento", value: editar.fechaNacimiento},
+    {nombre: "foto", value: editar.foto},
+    {nombre: "escuela", value: editar.escuela},
+    {nombre: "grado", value: editar.grado},
+  ];
+
+  const datosValidados = ValidarInputs(verificarInputs)
+
+  setAlerta(datosValidados);
+
+  const totalValidaciones = datosValidados.filter(input => input.estado === false).map
+  ((estado) => {return false});
+
+  if(totalValidaciones.length >=1){
+    console.log("Enviar al servidor");
+  }
+ };
+
+ const ValidarInputs = (data) =>{
+  console.log(data);
+
+  let errors = [];
+
+  const datosDelFormulario = data;
+
+  datosDelFormulario.map((valorInput) =>{
+    switch(valorInput.nombre){
+      case 'fechaNacimiento': {
+        if(valorInput.value === '' || valorInput.value === null){
+  
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '*Campo requerido',
+            estado: true
+          });
+        }else{
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '',
+            estado: false
+          })
+        }
+  
+        break;
+      }
+  
+      case 'foto': {
+        if(valorInput.value === '' || valorInput.value === null){
+  
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '*Campo requerido',
+            estado: true
+          });
+        }else{
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '',
+            estado: false
+          })
+  
+        }
+        break;
+
+      }
+
+      case 'escuela': {
+        if(valorInput.value === '' || valorInput.value === null){
+  
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '*Campo requerido',
+            estado: true
+          });
+        }else{
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '',
+            estado: false
+          })
+  
+        
+        }
+        break;
+      }
+  
+      case 'grado': {
+        if(valorInput.value === '' || valorInput.value === null){
+  
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '*Campo requerido',
+            estado: true
+          });
+        }else{
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '',
+            estado: false
+          })
+  
+        }
+        break;
+      }
+      default: {
+  
+        break;
+      }
+    }
+  })
+  return errors;
+ }
+
   return (
     
     <div className="container">
@@ -24,35 +170,63 @@ export const Perfil = () => {
           </div>
          
         </div>
-
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{/* Modal */}
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" onSubmit={handleEditSession}>
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content ">
             <div class="modal-header">
                 <h5 class="modal-title agregar" id="exampleModalLabel">Editar mi perfil</h5>
 
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="form-outline">
-                    
-                    
+                <div class="form-outline" >
+                    <form onSubmit={handleEditSession}>
                     <label class="form-label" for="typeText">Fecha de nacimiento</label>
-                    <input type="date" id="typeText" class="form-control mb-3" placeholder="Edad" />
-                   
+                    <input type="date" id="typeText" class="form-control mb-3" placeholder="fecha" name='fechaNacimiento' onChange={ManejarEventoDeInputs} value={editar.fechaNacimiento}/>
+                    {
+                    alerta.filter(input => input.valorInput == "fechaNacimiento" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                     <label class="form-label" for="typeText">Foto</label>
                     <div class="input-group">
-                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="foto" aria-label="Upload"/>
+                        <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="foto" aria-label="Upload" name='foto' onChange={ManejarEventoDeInputs} value={editar.foto}/>
+                        {
+                    alerta.filter(input => input.valorInput == "foto" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                       </div>
                       <label class="form-label" for="typeText">Centro Educativo</label>
-                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Centro Educativo" />
+                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Centro Educativo" name='escuela'onChange={ManejarEventoDeInputs} value={editar.escuela}/>
+                    {
+                    alerta.filter(input => input.valorInput == "escuela" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
                       <label class="form-label" for="typeText">Grado</label>
-                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Grado" />
+                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Grado" name='grado' onChange={ManejarEventoDeInputs} value={editar.grado}/>
+                    {
+                    alerta.filter(input => input.valorInput == "grado" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
 
+<button type="submit" class="btn-edit m-4 p-2">Editar</button>
+
+                  </form>
                   </div>
             </div>
              
-              <button type="button" class="btn-edit m-4 p-2">Editar</button>
         
           </div>
         </div>

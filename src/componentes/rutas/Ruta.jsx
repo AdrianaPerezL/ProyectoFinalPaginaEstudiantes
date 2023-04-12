@@ -9,6 +9,7 @@ import { Progreso } from '../vistas/Progreso'
 import { Cuestionario } from '../vistas/Cuestionario'
 import { Cronometro } from '../vistas/Cronometro'
 import { Perfil } from '../vistas/Perfil'
+import  ListCuestionario  from '../vistas/ListCuestionario'
 
 export const Ruta = () => {
   return (
@@ -26,6 +27,8 @@ export const Ruta = () => {
           <Route path='/Cuestionario' element={<Cuestionario/>}></Route>
           <Route path='/Cronometro' element={<Cronometro/>}></Route>
           <Route path='/Perfil' element={<Perfil/>}></Route>
+          <Route path='/list' element={<ListCuestionario />}></Route>
+          
           
     </Routes>
     </BrowserRouter>
