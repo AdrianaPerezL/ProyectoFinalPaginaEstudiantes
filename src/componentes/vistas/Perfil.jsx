@@ -182,7 +182,7 @@ const handleEditSession = (e) =>{
             <div class="modal-body">
                 <div class="form-outline" >
                     <form onSubmit={handleEditSession}>
-                    <label class="form-label" for="typeText">Fecha de nacimiento</label>
+                    <label class="form-label mt-1" for="typeText">Fecha de nacimiento</label>
                     <input type="date" id="typeText" class="form-control mb-3" placeholder="fecha" name='fechaNacimiento' onChange={ManejarEventoDeInputs} value={editar.fechaNacimiento}/>
                     {
                     alerta.filter(input => input.valorInput == "fechaNacimiento" && input.estado === true).map(message => (
@@ -191,7 +191,7 @@ const handleEditSession = (e) =>{
                       </div>
                     ))
                   }
-                    <label class="form-label" for="typeText">Foto</label>
+                    <label class="form-label mt-1" for="typeText">Foto</label>
                     <div class="input-group">
                         <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="foto" aria-label="Upload" name='foto' onChange={ManejarEventoDeInputs} value={editar.foto}/>
                         {
@@ -202,7 +202,7 @@ const handleEditSession = (e) =>{
                     ))
                   }
                       </div>
-                      <label class="form-label" for="typeText">Centro Educativo</label>
+                      <label class="form-label mt-1" for="typeText">Centro Educativo</label>
                     <input type="text" id="typeText" class="form-control mb-3" placeholder="Centro Educativo" name='escuela'onChange={ManejarEventoDeInputs} value={editar.escuela}/>
                     {
                     alerta.filter(input => input.valorInput == "escuela" && input.estado === true).map(message => (
@@ -211,7 +211,7 @@ const handleEditSession = (e) =>{
                       </div>
                     ))
                   }
-                      <label class="form-label" for="typeText">Grado</label>
+                      <label class="form-label mt-1" for="typeText">Grado</label>
                     <input type="text" id="typeText" class="form-control mb-3" placeholder="Grado" name='grado' onChange={ManejarEventoDeInputs} value={editar.grado}/>
                     {
                     alerta.filter(input => input.valorInput == "grado" && input.estado === true).map(message => (
@@ -221,7 +221,7 @@ const handleEditSession = (e) =>{
                     ))
                   }
 
-<button type="submit" class="btn-edit m-4 p-2">Editar</button>
+                    <button type="submit" class="btn-edit m-4 p-2">Editar</button>
 
                   </form>
                   </div>
