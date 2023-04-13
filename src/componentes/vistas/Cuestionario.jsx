@@ -417,6 +417,35 @@ export const Cuestionario = () => {
             <th scope="col">Pregunta</th>
             <th scope="col">Opcion seleccionada</th>
           </tr>
+
+          <tr>
+            <th scope="col">1</th>
+            <th scope="col">Pregunta 1</th>
+            <th scope="col">{respuestasFormulario.pregunta1}</th>
+          </tr>
+
+          <tr>
+            <th scope="col">2</th>
+            <th scope="col">Pregunta 2</th>
+            <th scope="col">{respuestasFormulario.pregunta2}</th>
+          </tr>
+
+          <tr>
+            <th scope="col">3</th>
+            <th scope="col">Pregunta 3</th>
+            <th scope="col">{respuestasFormulario.pregunta3}</th>
+          </tr>
+
+          <tr>
+            <th scope="col">4</th>
+            <th scope="col">Pregunta 3</th>
+            <th scope="col">{respuestasFormulario.pregunta4}</th>
+          </tr>
+          <tr>
+            <th scope="col">5</th>
+            <th scope="col">Pregunta 5</th>
+            <th scope="col">{respuestasFormulario.pregunta5}</th>
+          </tr>
         </thead>
         <tbody id="lista-informacion"></tbody>
         <tr id="listDefault"></tr>
