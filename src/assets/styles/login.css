@@ -64,3 +64,13 @@
     border-color: #9b59b6;
     box-shadow: none;
 }
+
+.pregunta{
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .text-purple{
+    color: #572ab0;
+    list-style: none;
+    text-decoration: none;
+  }

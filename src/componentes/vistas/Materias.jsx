@@ -1,8 +1,12 @@
 import '../../assets/styles/materias.css'
+import { useEffect } from 'react'
 
 import React from 'react'
 
 export  function Materias() {
+    useEffect(() => {
+        document.title = "Aula 503 | Materias"
+      }, []);
   return (
     <>
     <div class="container-fluid mt-xl-5">

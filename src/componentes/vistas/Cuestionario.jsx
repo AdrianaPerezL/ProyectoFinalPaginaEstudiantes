@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import React from 'react'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../../assets/styles/Cuestionario.css'
 import { Link } from "react-router-dom";
 import { Cronometro } from '../vistas/Cronometro';
@@ -9,6 +9,11 @@ import { Cronometro } from '../vistas/Cronometro';
 
 
 export const Cuestionario = () => {
+
+  useEffect(() => {
+    document.title = "Aula 503 | Quiz"
+  }, []);
+
   
   /* const MySwal = withReactContent(Swal)
 

@@ -1,8 +1,13 @@
 import React from 'react'
 import '../../assets/styles/listcuestionario.css'
+import { useEffect } from 'react'
 
 
 export default function ListCuestionario() {
+    useEffect(() => {
+        document.title = "Aula 503 | Cuestionarios"
+      }, []);
+    
   return (
     <>
        <div class="container-fluid mt-xl-5">

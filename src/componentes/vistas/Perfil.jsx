@@ -1,9 +1,13 @@
 import React from 'react'
 import '../../assets/styles/perfil.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 export const Perfil = () => {
+
+  useEffect(() => {
+    document.title = "Aula 503 | Perfil"
+  }, []);
 
   const editPerfil = {
     fechaNacimiento: "",

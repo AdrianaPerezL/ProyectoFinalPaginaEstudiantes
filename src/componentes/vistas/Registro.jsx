@@ -1,11 +1,15 @@
 import React from 'react'
 import '../../assets/styles/registro.css'
  import fondo from "../../assets/img/Recurso4.png";
- import { useState } from "react";
+ import { useState, useEffect } from "react";
 
 
 
 export const Registro = () => {
+
+  useEffect(() => {
+    document.title = "Aula 503 | Registrate"
+  }, []);
 
           //estado inicial de formulario
           const datosFormularios = {
@@ -276,6 +280,8 @@ return errors;
                 <div className="button">
                   <input type="submit" defaultValue="Registrarse" />
                 </div>
+                <p className="text-center mt-1 pregunta">¿Ya tienes una cuenta? <Link to="/login" className="text-purple">Inicia Sesión</Link></p>
+
               </form>
             </div>
           </div>

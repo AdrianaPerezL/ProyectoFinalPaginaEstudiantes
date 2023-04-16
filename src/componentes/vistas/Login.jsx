@@ -1,9 +1,14 @@
 import "../../assets/styles/login.css";
 import React from "react";
 import fondo from "../../assets/img/Recurso4.png";
-import {useState} from "react"
+import {useState, useEffect} from "react"
 
 export const Login = () => {
+
+  useEffect(() => {
+    document.title = "Aula 503 | Log In"
+  }, []);
+
   const datosLogin = {
     email: "",
     contraseña: ""
@@ -178,6 +183,8 @@ return errors;
                     <a href="" style={{textDecoration: "none"}}>Enviar</a>
                   </button>
                 </div>
+                <p className="text-center mt-1 pregunta">¿No tienes una cuenta? <Link to="/registro" className="text-purple">Registrate</Link></p>
+
                 <div role="alert" id="alerta"></div>
               </form>
             </div>

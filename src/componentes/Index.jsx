@@ -15,6 +15,10 @@ import { faFlask, faEarthAmericas, faFlaskVial, faDna } from '@fortawesome/free-
 
 export const Index = () => {
 
+  useEffect(() => {
+    document.title = "Aula 503 | Inicio"
+  }, []);
+
   const datosContacto = {
     PrimerNombre: "",
     apellido: "",
