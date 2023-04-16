@@ -158,7 +158,7 @@ const handleEditSession = (e) =>{
           <div className="card">
             <div className="card-body">
               <div className="d-flex flex-column align-items-center text-center">
-                <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="Admin" className="rounded-circle" width={150} />
+                <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="" className="rounded-circle" width={150} />
                 <div className="mt-3">
                   <h4>Adriana Pérez</h4>
                   <p className="text-secondary mb-1">Estudiante</p>
