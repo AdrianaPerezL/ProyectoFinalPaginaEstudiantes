@@ -2,6 +2,7 @@ import React from 'react'
 import '../../assets/styles/registro.css'
  import fondo from "../../assets/img/Recurso4.png";
  import { useState, useEffect } from "react";
+ import { Link } from 'react-router-dom'
 
 
 

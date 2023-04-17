@@ -2,6 +2,7 @@ import "../../assets/styles/login.css";
 import React from "react";
 import fondo from "../../assets/img/Recurso4.png";
 import {useState, useEffect} from "react"
+import { Link } from 'react-router-dom'
 
 export const Login = () => {
 

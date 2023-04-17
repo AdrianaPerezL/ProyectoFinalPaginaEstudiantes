@@ -10,10 +10,11 @@ export const Perfil = () => {
   }, []);
 
   const editPerfil = {
-    fechaNacimiento: "",
+    email: "",
+    email2: "",
     foto: "",
-    escuela: "",
-    grado: ""
+    telefono: "",
+    direccion: "",
   }
 
   const initialStateInput = {
@@ -39,10 +40,11 @@ const handleEditSession = (e) =>{
   e.preventDefault();
 
   let verificarInputs = [
-    {nombre: "fechaNacimiento", value: editar.fechaNacimiento},
     {nombre: "foto", value: editar.foto},
-    {nombre: "escuela", value: editar.escuela},
-    {nombre: "grado", value: editar.grado},
+    {nombre: "email", value: editar.email},
+    {nombre: "email2", value: editar.email2},
+    {nombre: "telefono", value: editar.telefono},
+    {nombre: "direccion", value: editar.direccion},
   ];
 
   const datosValidados = ValidarInputs(verificarInputs)
@@ -66,7 +68,25 @@ const handleEditSession = (e) =>{
 
   datosDelFormulario.map((valorInput) =>{
     switch(valorInput.nombre){
-      case 'fechaNacimiento': {
+      case 'email': {
+        if(valorInput.value === '' || valorInput.value === null){
+  
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '*Campo requerido',
+            estado: true
+          });
+        }else{
+          errors.push({
+            valorInput: valorInput.nombre,
+            mensaje: '',
+            estado: false
+          })
+        }
+  
+        break;
+      }
+      case 'email2': {
         if(valorInput.value === '' || valorInput.value === null){
   
           errors.push({
@@ -105,7 +125,7 @@ const handleEditSession = (e) =>{
 
       }
 
-      case 'escuela': {
+      case 'telefono': {
         if(valorInput.value === '' || valorInput.value === null){
   
           errors.push({
@@ -125,7 +145,7 @@ const handleEditSession = (e) =>{
         break;
       }
   
-      case 'grado': {
+      case 'direccion': {
         if(valorInput.value === '' || valorInput.value === null){
   
           errors.push({
@@ -186,15 +206,47 @@ const handleEditSession = (e) =>{
             <div class="modal-body">
                 <div class="form-outline" >
                     <form onSubmit={handleEditSession}>
-                    <label class="form-label mt-1" for="typeText">Fecha de nacimiento</label>
-                    <input type="date" id="typeText" class="form-control mb-3" placeholder="fecha" name='fechaNacimiento' onChange={ManejarEventoDeInputs} value={editar.fechaNacimiento}/>
+
+                    <label class="form-label mt-1" for="typeText">Correo</label>
+                    <input type="email" id="typeText" class="form-control mb-3" placeholder="Correo" name='email' onChange={ManejarEventoDeInputs} value={editar.email}/>
                     {
-                    alerta.filter(input => input.valorInput == "fechaNacimiento" && input.estado === true).map(message => (
+                    alerta.filter(input => input.valorInput == "email" && input.estado === true).map(message => (
                       <div>
                         <span className='text-danger'>{message.mensaje}</span>
                       </div>
                     ))
                   }
+
+                  <label class="form-label mt-1" for="typeText">Confirme su correo</label>
+                    <input type="email" id="typeText" class="form-control mb-3" placeholder="Correo" name='email2' onChange={ManejarEventoDeInputs} value={editar.email2}/>
+                    {
+                    alerta.filter(input => input.valorInput == "email2" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
+
+                    <label class="form-label mt-1" for="typeText">Teléfono</label>
+                    <input type="tel" id="typeText" class="form-control mb-3" placeholder="Número de teléfono" name='telefono' onChange={ManejarEventoDeInputs} value={editar.telefono}/>
+                    {
+                    alerta.filter(input => input.valorInput == "telefono" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
+
+                    <label class="form-label mt-1" for="typeText">Dirección</label>
+                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Dirección" name='direccion' onChange={ManejarEventoDeInputs} value={editar.direccion}/>
+                    {
+                    alerta.filter(input => input.valorInput == "direccion" && input.estado === true).map(message => (
+                      <div>
+                        <span className='text-danger'>{message.mensaje}</span>
+                      </div>
+                    ))
+                  }
+                    
                     <label class="form-label mt-1" for="typeText">Foto</label>
                     <div class="input-group">
                         <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="foto" aria-label="Upload" name='foto' onChange={ManejarEventoDeInputs} value={editar.foto}/>
@@ -206,24 +258,8 @@ const handleEditSession = (e) =>{
                     ))
                   }
                       </div>
-                      <label class="form-label mt-1" for="typeText">Centro Educativo</label>
-                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Centro Educativo" name='escuela'onChange={ManejarEventoDeInputs} value={editar.escuela}/>
-                    {
-                    alerta.filter(input => input.valorInput == "escuela" && input.estado === true).map(message => (
-                      <div>
-                        <span className='text-danger'>{message.mensaje}</span>
-                      </div>
-                    ))
-                  }
-                      <label class="form-label mt-1" for="typeText">Grado</label>
-                    <input type="text" id="typeText" class="form-control mb-3" placeholder="Grado" name='grado' onChange={ManejarEventoDeInputs} value={editar.grado}/>
-                    {
-                    alerta.filter(input => input.valorInput == "grado" && input.estado === true).map(message => (
-                      <div>
-                        <span className='text-danger'>{message.mensaje}</span>
-                      </div>
-                    ))
-                  }
+                   
+                     
 
                     <button type="submit" class="btn-edit m-4 p-2">Editar</button>
 
