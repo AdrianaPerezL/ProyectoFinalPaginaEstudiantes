@@ -99,8 +99,8 @@ const [show2, setShow2] = useState(false);
     console.log("Total de validaciones:", totalValidaciones.length);
 
     //Validación para enviar los datos al servidor
-    if (totalValidaciones.length >= 1) {
-      console.log("Enviar al servidor");
+    if (totalValidaciones.length >= 5) {
+      enviarDatosLogin()
     }
   };
 
