@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../assets/styles/navbar.css'
+import axios from "axios";
 import about  from '../assets/img/about.jpg'
 import mined from '../assets/img/brands/mined.png'
 import recurso2 from '../assets/img/brands/Recurso2.png'
@@ -18,6 +19,31 @@ export const Index = () => {
   useEffect(() => {
     document.title = "Aula 503 | Inicio"
   }, []);
+
+  const [datosServidor, setDatosServidor] =  useState([]);
+
+  console.log("Listar datos", datosServidor );
+
+  useEffect(() => {
+      async function getInfo() {
+          const url = "http://127.0.0.1:8000/api/contact";
+
+          let config = {
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json' 
+              }
+      };
+
+      try {
+          const resp = await axios.get(url, config);
+          setDatosServidor(resp.data);
+      } catch(err){
+          console.error(err);
+      }
+  };
+  getInfo();
+}, []);
 
   const datosContacto = {
     PrimerNombre: "",

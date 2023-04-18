@@ -3,12 +3,22 @@ import React from "react";
 import fondo from "../../assets/img/Recurso4.png";
 import {useState, useEffect} from "react"
 import { Link } from 'react-router-dom'
+import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 export const Login = () => {
 
   useEffect(() => {
     document.title = "Aula 503 | Log In"
   }, []);
+
+   //Mostrar contraseña
+   const [show, setShow] = useState(false);
+   const switchShow = () => setShow(!show);
+ 
+   const [password, setPassword] = useState("");
+   const onChange = ({ currentTarget }) => setPassword(currentTarget.value);
 
   const datosLogin = {
     email: "",
@@ -65,10 +75,38 @@ export const Login = () => {
   console.log("Total de validaciones:", totalValidaciones.length);
 
   //Validación para enviar los datos al servidor
-  if(totalValidaciones.length >=1){
+  if(totalValidaciones.length >=2){
+
     console.log("Enviar al servidor");
+    enviarDatosLogin()
+
   }
+
  };
+
+ async function enviarDatosLogin() {
+  const url = "http://127.0.0.1:8000/api/login";
+
+  let config = {
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json' 
+      }
+};
+
+const UpdateData = {
+  contrasena: login.contraseña,
+  correo: login.email
+}
+
+try {
+  const resp = await axios.post(url, UpdateData, config);
+  console.log(resp);
+} catch(err){
+  console.error(err);
+  console.error(err.response.data.error);
+}
+ }
 
  const ValidarInputs = (data) =>{
   console.log(data);
@@ -78,6 +116,9 @@ let errors = [];
 
 //Recibimos los datos a validar
 const datosDelFormulario = data;
+
+
+
 
 //Proceso de validación
 datosDelFormulario.map((valorInput) =>{
@@ -161,16 +202,26 @@ return errors;
                     ))
                   }
                   <label className="mt-4">Contraseña</label>
+
+                  <div className="d-flex">
                   <input
                     className="w-100 mt-2 mb-2 form-control"
-                    type="password"
-                    placeholder="Escribe tu correo"
+                    type={show ? "text" : "password"}
+                    placeholder="Escribe tu contraseña"
                     id="inputEmail"
                     aria-describedby="inputGroup-sizing-default"
                     name= 'contraseña'
                     value={login.contraseña}
                     onChange={ManejarEventoDeInputs}
                   />
+                   <FontAwesomeIcon
+                    className="fs-5 mt-3"
+                      icon={faEye}
+                      onClick={switchShow}
+                      {...(show ? "Ocultar" : "Mostrar")}
+                      style={{ color: "#e855be" }}
+                    />
+                    </div>
                   {
                     alerta.filter(input => input.valorInput == "contraseña" && input.estado === true).map(message => (
                       <div>
@@ -181,7 +232,7 @@ return errors;
                 </div>
                 <div className="botondiv w-100">
                   <button className="mt-2 btn-login w-100" type="submit">
-                    <a href="" style={{textDecoration: "none"}}>Enviar</a>
+                    Enviar
                   </button>
                 </div>
                 <p className="text-center mt-1 pregunta">¿No tienes una cuenta? <Link to="/registro" className="text-purple">Registrate</Link></p>
