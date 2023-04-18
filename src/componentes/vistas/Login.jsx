@@ -104,6 +104,8 @@ try {
   console.log(resp);
 } catch(err){
   console.error(err);
+  console.log("alerta");
+  /* ALERTTTTAAA */
   console.error(err.response.data.error);
 }
  }
