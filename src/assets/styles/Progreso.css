@@ -36,8 +36,11 @@ body {
 }
 
 .advertisers-service-sec {
-  background-color: #f5f5f5;
-  margin: 3%;
+  background-color: #eeeeee;
+  margin: 2%;
+  margin-left: 2%;
+  height: 90%;
+  border-radius: 25px;
 } 
 
 .advertisers-service-sec span {
@@ -133,13 +136,13 @@ body {
     width: 50%;
     margin-right: 10%;
     margin-left: 40%;
-    float: right;
+
+   
 }
 
 #letra{
   color: rgb(255, 23, 131);
 }
-
 
 #confetti-wrapper {
     overflow: hidden;  

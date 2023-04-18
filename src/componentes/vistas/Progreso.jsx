@@ -54,7 +54,7 @@ export const Progreso = () => {
   </div>
   
   <section id='insignias'>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion accordion-flush">
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id='letra'>
@@ -62,9 +62,14 @@ export const Progreso = () => {
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+    <div class="accordion-body" style={{height: '200px', }}>
+      <lord-icon src="https://cdn.lordicon.com/ibalslef.json" trigger="hover" style={{width: '200px', height: '200px', float:'left', position: 'block'}}>
+      </lord-icon>
+    <p>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</p>
+    </div>
     </div>
   </div>
+  
   <div class="accordion-item">
     <h2 class="accordion-header" id="flush-headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo" id='letra'>
@@ -72,7 +77,11 @@ export const Progreso = () => {
       </button>
     </h2>
     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body.</div>
+      <div class="accordion-body"  style={{height: '200px'}}>
+      <lord-icon src="https://cdn.lordicon.com/rnuzkjnk.json" trigger="hover" style={{width: '190px', height: '190px', float:'left', position: 'block'}}>
+      </lord-icon>
+        <p>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body.
+        </p></div>
     </div>
   </div>
   <div class="accordion-item">
@@ -82,7 +91,13 @@ export const Progreso = () => {
       </button>
     </h2>
     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body.</div>
+      <div class="accordion-body" style={{height: '200px'}}>
+      <lord-icon src="https://cdn.lordicon.com/shiwicyv.json" trigger="hover"  style={{width: '190px', height: '190px', float:'left', position: 'block'}}>
+      </lord-icon>
+        <p>
+         Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. 
+        </p>
+        </div>
     </div>
   </div>
 
@@ -93,7 +108,11 @@ export const Progreso = () => {
       </button>
     </h2>
     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+      <div class="accordion-body" style={{height: '200px'}}>
+      <lord-icon src="https://cdn.lordicon.com/hgbzryoa.json" trigger="hover" style={{width: '190px', height: '190px', float:'left', position: 'block'}}>
+      </lord-icon>
+        <p>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body
+        </p></div>
     </div>
   </div>
 
@@ -104,7 +123,11 @@ export const Progreso = () => {
       </button>
     </h2>
     <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+      <div class="accordion-body" style={{height: '200px'}}>
+      <lord-icon src="https://cdn.lordicon.com/qghygxlr.json" trigger="hover" style={{width: '190px', height: '190px', float:'left', position: 'block'}}>
+      </lord-icon>
+        <p>Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body
+        </p></div>
     </div>
   </div>
 </div>

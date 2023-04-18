@@ -119,7 +119,7 @@ export const Cuestionario = () => {
     <>
 
     <div id="encabezado3">
-          <h1>Ciencias Sociales</h1>
+          <h1 style={{fontWeight: '700'}}>Ciencias Sociales</h1>
           <h2>Cuestionario</h2>
     </div><button id="botonindicaciones" onClick={() =>mostrarAlerta()}>Indicaciones</button>
     <lord-icon src="https://cdn.lordicon.com/uutnmngi.json" trigger="hover" colors="primary:#0ad5bd,secondary:#572ab0" style={{width: '60px', height: '60px', marginLeft: '35%'}}>
@@ -148,11 +148,12 @@ export const Cuestionario = () => {
       </p>
       <input
       value="1"
-        onChange={ObtenerValores}
-        class="form-check-input"
+      class="form-check-input"  
+      onChange={ObtenerValores}
         type="radio"
         name="pregunta1"
         id="flexRadioDefault1"
+        
       />
       <label class="form-check-label" for="flexRadioDefault1" id='label' >
       Lorem
