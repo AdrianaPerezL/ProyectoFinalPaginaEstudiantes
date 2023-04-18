@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import "../../assets/styles/login.css";
 import React from "react";
 import fondo from "../../assets/img/Recurso4.png";
@@ -8,6 +10,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 export const Login = () => {
+  
+  const MySwal = withReactContent(Swal);
 
   useEffect(() => {
     document.title = "Aula 503 | Log In"
@@ -84,6 +88,7 @@ export const Login = () => {
 
  };
 
+
  async function enviarDatosLogin() {
   const url = "http://127.0.0.1:8000/api/login";
 
@@ -102,10 +107,25 @@ const UpdateData = {
 try {
   const resp = await axios.post(url, UpdateData, config);
   console.log(resp);
+
 } catch(err){
   console.error(err);
-  console.log("alerta");
-  /* ALERTTTTAAA */
+  
+  MySwal.fire({
+    color: '#572AB0',
+    icon: "error",
+    title: "Inicio de sesión fallido",
+    text: "Usuario no encontrado",
+    width: 400,
+    padding: '3em',
+
+    backdrop: `
+          rgba(0,0,123,0.4)
+          left top
+          no-repeat
+        `
+  });
+
   console.error(err.response.data.error);
 }
  }
@@ -172,6 +192,7 @@ datosDelFormulario.map((valorInput) =>{
 
 return errors;
 };
+
 
 
   return (
