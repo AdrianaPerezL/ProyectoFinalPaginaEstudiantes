@@ -1,5 +1,6 @@
 import '../../assets/styles/materias.css'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom';
 
 import React from 'react'
 
@@ -18,7 +19,7 @@ export  function Materias() {
                         <figure>
                             <h2 class="materia pt-4">Biología</h2>
                             <p class="año">1° año</p>
-                            <button class="btn-materia m-2"><a href="/Cuestionario">Entrar</a> </button>
+                            <Link to="/list" class="btn-materia m-2">Entrar</Link>
                             <img className='imgMateria' src="https://cdn-icons-png.flaticon.com/512/6502/6502964.png" alt=""/>
                         </figure>
                     </article>
@@ -29,7 +30,7 @@ export  function Materias() {
                         <figure>
                             <h2 class="materia pt-4">Física</h2>
                             <p class="año">1° año</p>
-                            <button class="btn-materia m-2">Entrar</button>
+                            <Link to="/list" class="btn-materia m-2">Entrar</Link>
 
                             <img className='imgMateria' src="https://cdn-icons-png.flaticon.com/512/1467/1467187.png" alt=""/>
                         </figure>
@@ -41,7 +42,7 @@ export  function Materias() {
                         <figure>
                             <h2 class="materia pt-4">Química</h2>
                             <p class="año">1° año</p>
-                            <button class="btn-materia m-2">Entrar</button>
+                            <Link to="/list" class="btn-materia m-2">Entrar</Link>
 
                             <img className='imgMateria' src="https://cdn-icons-png.flaticon.com/512/2470/2470882.png" alt=""/>
                         </figure>
@@ -52,7 +53,7 @@ export  function Materias() {
                         <figure>
                             <h2 class="materia pt-4">Estudios Sociales</h2>
                             <p class="año">1° año</p>
-                            <button class="btn-materia m-2">Entrar</button>
+                            <Link to="/list" class="btn-materia m-2">Entrar</Link>
 
                             <img className='imgMateria' src="https://cdn-icons-png.flaticon.com/512/3079/3079289.png" alt=""/>
                         </figure>

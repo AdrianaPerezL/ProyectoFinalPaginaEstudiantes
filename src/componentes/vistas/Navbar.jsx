@@ -5,13 +5,13 @@ import { Link, useNavigate } from "react-router-dom";
 import Cookies from 'universal-cookie';
 import Swal from 'sweetalert2'
 
- 
+
 
 export const Navbar = () => {
 
   const cookies = new Cookies();
   const validateSession = cookies.get('tokeApp');
-  console.log("get navbar info",cookies.get('tokeApp')); // Pacman
+  console.log("get navbar info", cookies.get('tokeApp')); // Pacman
 
 
   const [scrollTop, setScrollTop] = useState(0);
@@ -43,7 +43,7 @@ export const Navbar = () => {
   console.log(scrollTop, "ClassNamescrollTop", ClassNamescrollTop);
 
 
-  const cerrarSesionApp = () =>{
+  const cerrarSesionApp = () => {
 
     Swal.fire({
       title: '¿Estas seguro de cerrar sesión?',
@@ -89,39 +89,67 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#hero">
+              {validateSession ? (
+                <a></a>
+
+              ) : (<a className="nav-link" href="#hero">
                 Inicio
               </a>
+              )}
+
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#services">
-                Materias
-              </a>
+              {validateSession ? (
+                <a href="/materias" className="nav-link"  >
+                  Materias
+                </a>
+              ) : (
+                <a className="nav-link" href="#services">
+                  Materias
+                </a>
+              )}
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#contact">
-                Contactanos
-              </a>
+              {validateSession ? (
+                <a href="/list" className="nav-link"  >
+                  Cuestionarios
+                </a>
+              ) : (
+                <a className="nav-link" href="#contact">
+                  Contactanos
+                </a>
+              )}
+
             </li>
-            
+
           </ul>
 
           {validateSession ? (
-            <a className="btt ms-lg-3" onClick={cerrarSesionApp } >
-              Cerrar Sesión
-            </a>
+                     <a href="/perfil" className="nav-link" style={{
+                      fontWeight: "500",
+                      color: "#fff"
+                     }}  >
+                     Perfil
+                   </a>
+                  
           ) : (
             <a href="/login" className="btt ms-lg-3">
               Iniciar Sesión
             </a>
           )}
 
-          
-          <a href="/registro" className="btn btn-brand ms-lg-3">
+          {validateSession ? (
+                        <a className="btt ms-lg-4 " onClick={cerrarSesionApp} >
+                        Cerrar Sesión
+                      </a>
+          ): (
+              <a href = "/registro" className = "btn btn-brand ms-lg-3">
             Registrarse
           </a>
-        </div>
+        )}
+
       </div>
-    </nav>
+    </div>
+    </nav >
   );
 };
