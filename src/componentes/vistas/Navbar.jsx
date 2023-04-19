@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/styles/navbar.css";
 import Logo from "../../assets/img/Recurso1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'universal-cookie';
+import Swal from 'sweetalert2'
+
+ 
 
 export const Navbar = () => {
+
+  const cookies = new Cookies();
+  const validateSession = cookies.get('tokeApp');
+  console.log("get navbar info",cookies.get('tokeApp')); // Pacman
+
+
   const [scrollTop, setScrollTop] = useState(0);
 
   const [ClassNamescrollTop, setClassNameScrollTop] =
@@ -31,6 +41,27 @@ export const Navbar = () => {
   }, []);
 
   console.log(scrollTop, "ClassNamescrollTop", ClassNamescrollTop);
+
+
+  const cerrarSesionApp = () =>{
+
+    Swal.fire({
+      title: '¿Estas seguro de cerrar sesión?',
+      showDenyButton: true,
+      confirmButtonText: 'Sí',
+      denyButtonText: `No`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        cookies.remove("tokeApp");
+        Swal.fire('Sesión finalizada', '', 'success')
+      } else if (result.isDenied) {
+        Swal.fire('Sesión cancelada', '', 'info')
+      }
+    })
+
+
+  };
 
   return (
     <nav
@@ -75,9 +106,17 @@ export const Navbar = () => {
             
           </ul>
 
-          <a href="/login" className="btt ms-lg-3">
-            Iniciar Sesión
-          </a>
+          {validateSession ? (
+            <a className="btt ms-lg-3" onClick={cerrarSesionApp } >
+              Cerrar Sesión
+            </a>
+          ) : (
+            <a href="/login" className="btt ms-lg-3">
+              Iniciar Sesión
+            </a>
+          )}
+
+          
           <a href="/registro" className="btn btn-brand ms-lg-3">
             Registrarse
           </a>

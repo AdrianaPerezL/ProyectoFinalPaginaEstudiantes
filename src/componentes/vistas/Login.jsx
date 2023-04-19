@@ -4,14 +4,21 @@ import "../../assets/styles/login.css";
 import React from "react";
 import fondo from "../../assets/img/Recurso4.png";
 import {useState, useEffect} from "react"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
+import Cookies from 'universal-cookie';
+ 
+
 export const Login = () => {
   
+  const cookies = new Cookies();
+  
   const MySwal = withReactContent(Swal);
+
+  
 
   useEffect(() => {
     document.title = "Aula 503 | Log In"
@@ -106,7 +113,12 @@ const UpdateData = {
 
 try {
   const resp = await axios.post(url, UpdateData, config);
-  console.log(resp);
+  console.log(resp.data,"---------------------");
+
+  const token = resp.data.access_token;
+  const validateSession = cookies.set("tokeApp", { token:token }, {path: "/"} ); 
+
+  Swal.fire('Bienvenido')
 
 } catch(err){
   console.error(err);
