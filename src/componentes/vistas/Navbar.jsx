@@ -10,7 +10,6 @@ import Swal from 'sweetalert2'
 
 export const Navbar = () => {
   const cookies = new Cookies();
-  const navigate = useNavigate();
   const validateSession = cookies.get('tokeApp');
   console.log("get navbar info", cookies.get('tokeApp')); // Pacman
 
@@ -59,7 +58,7 @@ export const Navbar = () => {
       } else if (result.isDenied) {
         Swal.fire('Sesión cancelada', '', 'info')
       }
-      navigate("/");
+      setTimeout( function() { window.location.href = "http://localhost:3001/login"; }, 1500 );
 
     })
 

@@ -119,7 +119,7 @@ try {
   const validateSession = cookies.set("tokeApp", { token:token }, {path: "/"} ); 
 
   Swal.fire('Bienvenido');
-  navigate("/materias");
+  setTimeout( function() { window.location.href = "http://localhost:3001/materias"; }, 1500 );
 
 
 } catch(err){
