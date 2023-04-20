@@ -219,7 +219,7 @@ return errors;
               </div>
               <div data-aos="fade-down" data-aos-delay={150} className="col-lg-5">
                 <h1>Conocenos</h1>
-                <p className="mt-3 mb-4">Aula 503 posee diversas características para promover el aprendizaje en distintas materias</p>
+                <p className="mt-3 mb-4">Aula 503 posee diversas características para promover el aprendizaje en dos áreas</p>
                 <div className="d-flex pt-4 mb-3">
                   <div className="iconbox me-4">
                   <FontAwesomeIcon icon={faFlask} style={{color: "#4e57d4",}} /> 
@@ -261,7 +261,8 @@ return errors;
                     <i className="ri-pen-nib-fill" />
                   </div>
                   <h5 className="mt-4 mb-3">Física</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
+                  <p>Ciencia natural que estudia, mediante leyes fundamentales, la energía, la materia, el tiempo y el espacio, es decir, el universo mismo.
+</p>
                 </div>
               </div>
               <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={250}>
@@ -270,7 +271,7 @@ return errors;
                   <FontAwesomeIcon icon={faFlaskVial} />
                   </div>
                   <h5 className="mt-4 mb-3">Química</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
+                  <p>Ciencia natural que estudia la composición, propiedades de la materia en forma de elementos, especies, compuestos, mezclas u otras sustancias</p>
                 </div>
               </div>
               <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={350}>
@@ -279,7 +280,9 @@ return errors;
                   <FontAwesomeIcon icon={faDna} />                  
                   </div>
                   <h5 className="mt-4 mb-3">Biología</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
+                  <p>
+                  Ciencia que estudia el origen, la evolución y las características de los seres vivos, así como sus procesos vitales con el medio ambiente.
+                  </p>
                 </div>
               </div>
               <div className="col-lg-4 col-sm-6" data-aos="fade-down" data-aos-delay={450}>
@@ -288,7 +291,9 @@ return errors;
                   <FontAwesomeIcon icon={faEarthAmericas} />                 
                   </div>
                   <h5 className="mt-4 mb-3">Sociales</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet fugiat sunt distinctio?</p>
+                  <p>
+                  Ciencias cuyo objeto estudio es la interacción social y la influencia del comportamiento humano en el entorno social en el que ocurre.
+                  </p>
                 </div>
               </div>
          
@@ -360,9 +365,12 @@ return errors;
             <div className="row">
               <div className="col-12 text-center" data-aos="fade-down" data-aos-delay={150}>
                 <div className="section-title">
-                  <h1 className="display-4 text-white fw-semibold">Contactanos</h1>
+                  <h1 className="display-4 text-white fw-semibold">Contáctanos</h1>
                   <div className="line bg-white" />
-                  <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit exercitationem voluptatum perspiciatis? Itaque, placeat expedita rem exercitationem a soluta adipisci! Repudiandae asperiores, animi reiciendis facilis laudantium illo odio error.</p>
+                  <p className="text-white">
+                  Si quiere más información sobre el programa, estaremos contentos de ayudarte, por medio del siguiente formulario
+                  de contacto.
+                  </p>
                 </div>
               </div>
             </div>
