@@ -2,17 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../../assets/styles/navbar.css";
 import Logo from "../../assets/img/Recurso1.png";
 import { Link, useNavigate } from "react-router-dom";
-import Cookies from 'universal-cookie';
-import Swal from 'sweetalert2'
-
-
-
+import Cookies from "universal-cookie";
+import Swal from "sweetalert2";
 
 export const Navbar = () => {
   const cookies = new Cookies();
-  const validateSession = cookies.get('tokeApp');
-  console.log("get navbar info", cookies.get('tokeApp')); // Pacman
-
+  const validateSession = cookies.get("tokeApp");
+  console.log("get navbar info", cookies.get("tokeApp")); // Pacman
 
   const [scrollTop, setScrollTop] = useState(0);
 
@@ -42,27 +38,23 @@ export const Navbar = () => {
 
   console.log(scrollTop, "ClassNamescrollTop", ClassNamescrollTop);
 
-
   const cerrarSesionApp = () => {
-
     Swal.fire({
-      title: '¿Estas seguro de cerrar sesión?',
+      title: "¿Estas seguro de cerrar sesión?",
       showDenyButton: true,
-      confirmButtonText: 'Sí',
+      confirmButtonText: "Sí",
       denyButtonText: `No`,
     }).then((result) => {
       if (result.isConfirmed) {
         cookies.remove("tokeApp");
-        Swal.fire('Sesión finalizada', '', 'success')
-        
+        Swal.fire("Sesión finalizada", "", "success");
       } else if (result.isDenied) {
-        Swal.fire('Sesión cancelada', '', 'info')
+        Swal.fire("Sesión cancelada", "", "info");
       }
-      setTimeout( function() { window.location.href = "http://localhost:3001/login"; }, 1500 );
-
-    })
-
-
+      setTimeout(function () {
+        window.location.href = "http://localhost:3001/login";
+      }, 1500);
+    });
   };
 
   return (
@@ -93,16 +85,15 @@ export const Navbar = () => {
             <li className="nav-item">
               {validateSession ? (
                 <a></a>
-
-              ) : (<a className="nav-link" href="#hero">
-                Inicio
-              </a>
+              ) : (
+                <a className="nav-link" href="#hero">
+                  Inicio
+                </a>
               )}
-
             </li>
             <li className="nav-item">
               {validateSession ? (
-                <a href="/materias" className="nav-link"  >
+                <a href="/materias" className="nav-link">
                   Materias
                 </a>
               ) : (
@@ -113,7 +104,7 @@ export const Navbar = () => {
             </li>
             <li className="nav-item">
               {validateSession ? (
-                <a href="/list" className="nav-link"  >
+                <a href="/list" className="nav-link">
                   Cuestionarios
                 </a>
               ) : (
@@ -121,19 +112,20 @@ export const Navbar = () => {
                   Contactanos
                 </a>
               )}
-
             </li>
-
           </ul>
 
           {validateSession ? (
-                     <a href="/perfil" className="nav-link" style={{
-                      fontWeight: "500",
-                      color: "#fff"
-                     }}  >
-                     Perfil
-                   </a>
-                  
+            <a
+              href="/perfil"
+              className="nav-link"
+              style={{
+                fontWeight: "500",
+                color: "#fff",
+              }}
+            >
+              Perfil
+            </a>
           ) : (
             <a href="/login" className="btt ms-lg-3">
               Iniciar Sesión
@@ -141,20 +133,16 @@ export const Navbar = () => {
           )}
 
           {validateSession ? (
-                        <a className="btt ms-lg-4 " onClick={cerrarSesionApp} >
-                        Cerrar Sesión
-                      </a>
-
-          ): (
-              <a href = "/registro" className = "btn btn-brand ms-lg-3">
-            Registrarse
-          </a>
-        )}
-
-
-
+            <a className="btt ms-lg-4 " onClick={cerrarSesionApp}>
+              Cerrar Sesión
+            </a>
+          ) : (
+            <a href="/registro" className="btn btn-brand ms-lg-3">
+              Registrarse
+            </a>
+          )}
+        </div>
       </div>
-    </div>
-    </nav >
+    </nav>
   );
 };
