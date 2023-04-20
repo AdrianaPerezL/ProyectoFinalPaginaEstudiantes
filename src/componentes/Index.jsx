@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../assets/styles/navbar.css'
 import axios from "axios";
+import Swal from 'sweetalert2'
 import about  from '../assets/img/about.jpg'
 import mined from '../assets/img/brands/mined.png'
 import recurso2 from '../assets/img/brands/Recurso2.png'
@@ -24,33 +25,13 @@ export const Index = () => {
 
   console.log("Listar datos", datosServidor );
 
-  useEffect(() => {
-      async function getInfo() {
-          const url = "http://127.0.0.1:8000/api/contact";
-
-          let config = {
-              headers: {
-                  'Content-Type': 'application/json',
-                  'Accept': 'application/json' 
-              }
-      };
-
-      try {
-          const resp = await axios.get(url, config);
-          setDatosServidor(resp.data);
-      } catch(err){
-          console.error(err);
-      }
-  };
-  getInfo();
-}, []);
+ 
 
   const datosContacto = {
-    PrimerNombre: "",
-    apellido: "",
+    primer_nombre: "",
+    primer_apellido: "",
     email: "",
-    nie: "",
-    texto: ""
+    mensaje: ""
   }
 
   const initialStateInput = {
@@ -72,15 +53,35 @@ export const Index = () => {
   setContacto({...contacto, [name]: value});
 }
 
+function comment(){
+  const url = "http://127.0.0.1:8000/api/contact";
+
+  let config = {
+    headers: {
+        'Content-Type': 'multipart/form-data',
+        'Accept': 'application/json' 
+    }
+}
+
+  axios.post(url, contacto, config)
+  .then(response => console.log(response.data))
+  setContacto(datosContacto)
+  Swal.fire({
+    icon: 'success',
+    title: 'Enviado',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+
 const handleLoginSession = (e) =>{
   e.preventDefault();
 
   let verificarInputs = [
-    {nombre: "PrimerNombre", value: contacto.PrimerNombre},
-    {nombre: "apellido", value: contacto.apellido},
+    {nombre: "primer_nombre", value: contacto.primer_nombre},
+    {nombre: "primer_apellido", value: contacto.primer_apellido},
     {nombre: "email", value: contacto.email},
-    {nombre: "nie", value: contacto.nie},
-    {nombre: "texto", value: contacto.texto},
+    {nombre: "mensaje", value: contacto.mensaje},
 ];
 
    const datosValidados = ValidarInputs(verificarInputs)
@@ -94,8 +95,9 @@ const handleLoginSession = (e) =>{
 
  console.log("Total de validaciones:", totalValidaciones.length);
 
- if(totalValidaciones.length >=1){
+ if(totalValidaciones.length >=4){
    console.log("Enviar al servidor");
+   comment()
  }
 
 };
@@ -109,7 +111,7 @@ const datosDelFormulario = data;
 
 //Proceso de validación
 datosDelFormulario.map((valorInput) =>{
-  if(valorInput.nombre === "PrimerNombre"){
+  if(valorInput.nombre === "primer_nombre"){
     if(valorInput.value === '' || valorInput.value === null){
 
       errors.push({
@@ -124,7 +126,7 @@ datosDelFormulario.map((valorInput) =>{
         estado: false
       })
     }
-  }else if(valorInput.nombre === "apellido"){
+  }else if(valorInput.nombre === "primer_apellido"){
     if(valorInput.value === '' || valorInput.value === null){
 
       errors.push({
@@ -155,23 +157,7 @@ datosDelFormulario.map((valorInput) =>{
       })
 
     }
-  }else if(valorInput.nombre === "nie"){
-    if(valorInput.value === '' || valorInput.value === null){
-
-      errors.push({
-        valorInput: valorInput.nombre,
-        mensaje: '*Campo requerido',
-        estado: true
-      });
-    }else{
-      errors.push({
-        valorInput: valorInput.nombre,
-        mensaje: '',
-        estado: false
-      })
-
-    }
-  }else if(valorInput.nombre === "texto"){
+  }else if(valorInput.nombre === "mensaje"){
     if(valorInput.value === '' || valorInput.value === null){
 
       errors.push({
@@ -384,9 +370,9 @@ return errors;
               <div className="col-lg-8">
                 <form  className="row g-3 p-lg-5 p-4 bg-white theme-shadow" onSubmit={handleLoginSession}>
                   <div className="form-group col-lg-6">
-                    <input type="text" className="form-control" placeholder="Primer nombre" name='PrimerNombre' value={contacto.PrimerNombre} onChange={ManejarEventoDeInputs}/>
+                    <input type="text" className="form-control" placeholder="Primer nombre" name='primer_nombre' value={contacto.primer_nombre} onChange={ManejarEventoDeInputs}/>
                     {
-                    alerta.filter(input => input.valorInput == "PrimerNombre" && input.estado === true).map(message => (
+                    alerta.filter(input => input.valorInput == "primer_nombre" && input.estado === true).map(message => (
                       <div>
                         <span className='text-danger'>{message.mensaje}</span>
                       </div>
@@ -394,9 +380,9 @@ return errors;
                   }
                   </div>
                   <div className="form-group col-lg-6">
-                    <input type="text" className="form-control" placeholder="Primer apellido" name='apellido' value={contacto.apellido} onChange={ManejarEventoDeInputs}/>
+                    <input type="text" className="form-control" placeholder="Primer apellido" name='primer_apellido' value={contacto.primer_apellido} onChange={ManejarEventoDeInputs}/>
                     {
-                    alerta.filter(input => input.valorInput == "apellido" && input.estado === true).map(message => (
+                    alerta.filter(input => input.valorInput == "primer_apellido" && input.estado === true).map(message => (
                       <div>
                         <span className='text-danger'>{message.mensaje}</span>
                       </div>
@@ -413,20 +399,11 @@ return errors;
                     ))
                   }
                   </div>
+              
                   <div className="form-group col-lg-12">
-                    <input type="number" className="form-control" placeholder="NIE" name='nie' value={contacto.nie} onChange={ManejarEventoDeInputs}/>
+                    <textarea name="mensaje" rows={5} className="form-control" placeholder="Ingresar Mensaje" defaultValue={""} value={contacto.mensaje} onChange={ManejarEventoDeInputs}/>
                     {
-                    alerta.filter(input => input.valorInput == "nie" && input.estado === true).map(message => (
-                      <div>
-                        <span className='text-danger'>{message.mensaje}</span>
-                      </div>
-                    ))
-                  }
-                  </div>
-                  <div className="form-group col-lg-12">
-                    <textarea name="texto" rows={5} className="form-control" placeholder="Ingresar Mensaje" defaultValue={""} value={contacto.texto} onChange={ManejarEventoDeInputs}/>
-                    {
-                    alerta.filter(input => input.valorInput == "texto" && input.estado === true).map(message => (
+                    alerta.filter(input => input.valorInput == "mensaje" && input.estado === true).map(message => (
                       <div>
                         <span className='text-danger'>{message.mensaje}</span>
                       </div>
