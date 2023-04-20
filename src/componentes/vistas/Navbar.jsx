@@ -7,9 +7,10 @@ import Swal from 'sweetalert2'
 
 
 
-export const Navbar = () => {
 
+export const Navbar = () => {
   const cookies = new Cookies();
+  const navigate = useNavigate();
   const validateSession = cookies.get('tokeApp');
   console.log("get navbar info", cookies.get('tokeApp')); // Pacman
 
@@ -51,13 +52,15 @@ export const Navbar = () => {
       confirmButtonText: 'Sí',
       denyButtonText: `No`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         cookies.remove("tokeApp");
         Swal.fire('Sesión finalizada', '', 'success')
+        
       } else if (result.isDenied) {
         Swal.fire('Sesión cancelada', '', 'info')
       }
+      navigate("/");
+
     })
 
 
@@ -142,11 +145,14 @@ export const Navbar = () => {
                         <a className="btt ms-lg-4 " onClick={cerrarSesionApp} >
                         Cerrar Sesión
                       </a>
+
           ): (
               <a href = "/registro" className = "btn btn-brand ms-lg-3">
             Registrarse
           </a>
         )}
+
+
 
       </div>
     </div>

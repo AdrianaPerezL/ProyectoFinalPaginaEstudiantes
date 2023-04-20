@@ -8,14 +8,14 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-
 import Cookies from 'universal-cookie';
+
  
 
 export const Login = () => {
   
   const cookies = new Cookies();
-  
+  const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
   
@@ -118,7 +118,9 @@ try {
   const token = resp.data.access_token;
   const validateSession = cookies.set("tokeApp", { token:token }, {path: "/"} ); 
 
-  Swal.fire('Bienvenido')
+  Swal.fire('Bienvenido');
+  navigate("/materias");
+
 
 } catch(err){
   console.error(err);

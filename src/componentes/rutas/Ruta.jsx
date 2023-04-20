@@ -10,6 +10,7 @@ import { Cuestionario } from '../vistas/Cuestionario'
 import { Cronometro } from '../vistas/Cronometro'
 import { Perfil } from '../vistas/Perfil'
 import  ListCuestionario  from '../vistas/ListCuestionario'
+import Error404 from '../vistas/Error404'
 
 export const Ruta = () => {
   return (
@@ -28,6 +29,7 @@ export const Ruta = () => {
           <Route path='/Cronometro' element={<Cronometro/>}></Route>
           <Route path='/Perfil' element={<Perfil/>}></Route>
           <Route path='/list' element={<ListCuestionario />}></Route>
+          <Route path='*' element={<Error404 />}></Route>
           
           
     </Routes>
