@@ -52,7 +52,7 @@ export const Navbar = () => {
         Swal.fire("Sesión cancelada", "", "info");
       }
       setTimeout(function () {
-        window.location.href = "http://localhost:3001/login";
+        window.location.href = "/login";
       }, 1500);
     });
   };
